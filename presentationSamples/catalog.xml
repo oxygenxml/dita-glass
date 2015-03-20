@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+	<rewriteURI uriStartString="urn:files:xsd:" rewritePrefix="./resources/xsd/"/>
+	<rewriteURI uriStartString="urn:processors:md:" rewritePrefix="./processors/pagedown/"/>
+	<rewriteURI uriStartString="urn:files:" rewritePrefix="./resources/"/>
+	<rewriteURI uriStartString="urn:processors:" rewritePrefix="./processors/"/>
+	<rewriteURI uriStartString="e2d:/" rewritePrefix="convert:/processor=xslt;ss=urn:processors:excel2d.xsl/processor=excel;sn=sample!/"/>
+	<rewriteURI uriStartString="h2d:/" rewritePrefix="convert:/processor=xslt;ss=urn:processors:h2d.xsl/processor=xhtml!/"/>
+	<rewriteURI uriStartString="m2d:/" rewritePrefix="convert:/processor=xslt;ss=urn:processors:h2d.xsl/processor=xhtml/processor=js;js=urn:processors:pagedown%2FMarkdown.Converter.js;fn=convertExternal!/"/>
+</catalog>
