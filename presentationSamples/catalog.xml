@@ -1,10 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
-	<rewriteURI uriStartString="urn:files:xsd:" rewritePrefix="./resources/xsd/"/>
-	<rewriteURI uriStartString="urn:processors:md:" rewritePrefix="./processors/pagedown/"/>
-	<rewriteURI uriStartString="urn:files:" rewritePrefix="./resources/"/>
-	<rewriteURI uriStartString="urn:processors:" rewritePrefix="./processors/"/>
-	<rewriteURI uriStartString="e2d:/" rewritePrefix="convert:/processor=xslt;ss=urn:processors:excel2d.xsl/processor=excel;sn=sample!/"/>
-	<rewriteURI uriStartString="h2d:/" rewritePrefix="convert:/processor=xslt;ss=urn:processors:h2d.xsl/processor=xhtml!/"/>
-	<rewriteURI uriStartString="m2d:/" rewritePrefix="convert:/processor=xslt;ss=urn:processors:h2d.xsl/processor=xhtml/processor=js;js=urn:processors:pagedown%2FMarkdown.Converter.js;fn=convertExternal!/"/>
+    <!-- resource collections -->
+	<rewriteURI uriStartString="urn:files:" rewritePrefix="resources/"/>
+	
+    <rewriteURI uriStartString="urn:processors:md:" rewritePrefix="processors/pagedown/"/>
+	<rewriteURI uriStartString="urn:processors:" rewritePrefix="processors/"/>
+    
+    <!-- aliases for conversion protocols -->	
+    <rewriteURI uriStartString="excel2dita:/" rewritePrefix="convert:/processor=xslt;ss=urn:processors:excel2d.xsl/processor=excel;sn=sample!/"/>
+	<rewriteURI uriStartString="html2dita:/" rewritePrefix="convert:/processor=xslt;ss=urn:processors:h2d.xsl/processor=xhtml!/"/>
+	<rewriteURI uriStartString="md2dita:/" rewritePrefix="convert:/processor=xslt;ss=urn:processors:h2d.xsl/processor=xhtml/processor=js;js=urn:processors:pagedown%2FMarkdown.Converter.js;fn=convertExternal!/"/>
+    <rewriteURI uriStartString="xsd2dita:/" rewritePrefix="convert:/processor=xslt;ss=urn:processors:xsdToTopic.xsl!/"/>
+    <rewriteURI uriStartString="javadoc2dita:/" rewritePrefix="convert:/processor=xslt;ss=urn:processors:javaDocToTopic.xsl/processor=xhtml!/"/>
+    <rewriteURI uriStartString="javadoc2ditamap:/" rewritePrefix="convert:/processor=xslt;ss=urn:processors:javaDocToMap.xsl/processor=xhtml!/"/>
+                                                                    
+    <rewriteURI uriStartString="java2dita:/" rewritePrefix="convert:/processor=xslt;ss=urn:processors:javaToTopic.xsl/processor=java;jars=urn:processors:jars;ccn=j.to.xml.JavaToXML!/"/>
+    
+    <rewriteURI uriStartString="gs2dita:/" rewritePrefix="convert:/processor=xslt;ss=urn:processors:h2d.xsl/processor=xslt;ss=urn:processors:googleSheets2dita.xsl/processor=xhtml!/"/>
+    <rewriteURI uriStartString="md2html:/" rewritePrefix="convert:/processor=xhtml/processor=js;js=urn:processors:pagedown%2FMarkdown.Converter.js;fn=convertExternal!/"/>
+
+    <rewriteURI uriStartString="csv2dita:/" rewritePrefix="convert:/rprocessor=xslt;ss=urn:processors:dita2csv.xsl/processor=xslt;ss=urn:processors:csvtext2dita.xsl/processor=wrap!/"/>
+    <rewriteURI uriStartString="rocsv2dita:/" rewritePrefix="convert:/processor=xslt;ss=urn:processors:csvtext2dita.xsl/processor=wrap!/"/>
+
 </catalog>

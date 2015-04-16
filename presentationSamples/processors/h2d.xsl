@@ -1224,6 +1224,7 @@ The attribute's contents were placed in a comment before the table.</xsl:with-pa
     </xsl:call-template>
 </xsl:if>
 <table>
+    <xsl:attribute name="id" select="concat('id-', if (@id) then @id else generate-id(.))"/>
     <xsl:apply-templates select="@class"/>
     <xsl:if test="@align"><xsl:attribute name="align"><xsl:value-of select="@align"/></xsl:attribute></xsl:if>
     <xsl:choose>

@@ -5,11 +5,11 @@
     version="2.0">
     <xsl:output method="xml" doctype-public="-//OASIS//DTD DITA Topic//EN" 
         doctype-system="http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" indent="yes"/>
-    <xsl:template match="/">
-        <topic id="tid">
-            <title>[Excel] Imported Table of animals </title>
+    <xsl:template match="//sheet[1]">
+        <topic id="{@name}">
+            <title>[Excel] Imported Table "<xsl:value-of select="@name"/>" </title>
             <body>
-                <table frame="none">
+                <table frame="none" id="table_{@name}">
                     <title>Flowers</title>
                     <tgroup>
                         <xsl:attribute name="cols"><xsl:value-of select="count(//row[1]/*)"/></xsl:attribute>

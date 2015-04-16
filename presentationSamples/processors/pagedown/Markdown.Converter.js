@@ -53,7 +53,10 @@ else
 
 function convertExternal(text){
       var converter = new Markdown.Converter();
-      return converter.makeHtml(text);
+      htmlContent = "<?xml version='1.0' encoding='UTF-8'?><html><head></head><body>";
+      htmlContent += converter.makeHtml(text);
+      htmlContent += "</body></html>";
+      return htmlContent;
 }
 
 (function () {

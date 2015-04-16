@@ -2,12 +2,13 @@
 <!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN" "map.dtd">
 <map>
  <title>DITA Glass</title>
- <topicref href="convert:/processor=xslt;ss=urn:processors:excel2d.xsl/processor=excel;sn=sample!/urn:files:sample.xls" format="dita"/>
+ <topicref href="convert:/processor=xslt;ss=urn:processors:excel2d.xsl/processor=excel!/urn:files:sample.xls" format="dita"/>
  <topicref href="convert:/processor=xslt;ss=urn:processors:h2d.xsl/processor=xhtml!/urn:files:care.html" format="dita"/>
  <topicref href="convert:/processor=xslt;ss=urn:processors:h2d.xsl/processor=xhtml/processor=js;js=urn:processors:md:Markdown.Converter.js;fn=convertExternal!/urn:files:sample.md" format="dita"/>
  <topicref href="resources/topic.dita" format="dita"/>
  <topicref href="convert:/processor=xslt;ss=urn:processors:xsdToTopic.xsl!/urn:files:xsd/personal.xsd" format="dita"/>
  <topicref href="convert:/processor=xslt;ss=urn:processors:javaDocToTopic.xsl/processor=xhtml!/urn:files:javadoc/ro/sync/ecss/component/editor/ButtonEditor.html" format="dita"/>
+ <topicref href="convert:/processor=xslt;ss=urn:processors:javaToTopic.xsl/processor=java;jars=urn:processors:jars;ccn=j.to.xml.JavaToXML!/urn:files:java/WSAuthorEditorPage.java" format="dita"/>
  
  <!--<topicref href="convert:/processor=xslt;ss=urn:processors:javaDocToMap.xsl/processor=xhtml!/file:/D:/projects/dita-na-2015/presentation/presentationSamples/javadoc/overview-frame.html" format="ditamap"/>-->
 </map>
