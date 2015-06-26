@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+  <!-- ========================================= 
+     created: 2015-06-21
+     by:      Markus Wiedenmaier
+              http://www.practice-innovation.de
+              info@practice-innovation.de
+     Descr.:  Schema definition for XGlass document types
+     License: delivered "as is" with no warranties
+              feel free in any case
+     ========================================= -->
+  
+  <!-- ================== -->
+  <!-- root               -->
+  <!-- ================== -->
+  
+  <xs:element name="xglass">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="definitions"/>
+        <xs:element ref="conversions"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <!-- ================== -->
+  <!-- definitions        -->
+  <!-- ================== -->
+  <xs:element name="definitions">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="urns"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="urns">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" maxOccurs="unbounded" ref="urn"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="urn">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="urn"/>
+      </xs:sequence>
+      <xs:attribute name="name" use="required" type="nonEmptyString"/>
+      <xs:attribute name="path" use="required" type="nonEmptyUri"/>
+    </xs:complexType>
+  </xs:element>
+  
+  <!-- ================== -->
+  <!-- conversion         -->
+  <!-- ================== -->
+  <xs:element name="conversions">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="conversion"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="conversion">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" ref="comment"/>
+        <xs:choice maxOccurs="unbounded">
+          <xs:element ref="read"/>
+          <xs:element minOccurs="0" ref="write"/>
+        </xs:choice>
+      </xs:sequence>
+          <!--<xs:all minOccurs="1">
+            <xs:element ref="read"/>
+            <xs:element minOccurs="0" ref="write"/>
+          </xs:all>-->
+      <!--<xs:sequence>
+        <xs:element minOccurs="0" ref="comment"/>
+      </xs:sequence>-->
+      <xs:attribute name="protocol" use="required" type="nonEmptyString"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="comment" type="xs:string"/>
+  <xs:simpleType name="nonEmptyString">
+    <xs:restriction base="xs:string">
+      <xs:minLength value="1"/>
+    </xs:restriction>
+  </xs:simpleType>
+  
+  <!-- ================== -->
+  <!-- processors         -->
+  <!-- ================== -->
+  <xs:element name="processor" abstract="true"/>
+  <xs:element name="js" substitutionGroup="processor">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="script"/>
+        <xs:element ref="method"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="excel" substitutionGroup="processor">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="sheet"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="xhtml" substitutionGroup="processor">
+    <xs:complexType/>
+  </xs:element>
+  <xs:element name="wrap" substitutionGroup="processor">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="roottag" minOccurs="0"/>
+        <xs:element ref="encoding" minOccurs="0"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="xquery" substitutionGroup="processor">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="script"/>
+        <xs:element maxOccurs="1" minOccurs="0" ref="parameters"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="java" substitutionGroup="processor">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="jars"/>
+        <xs:element ref="class"/>
+        <xs:element minOccurs="0" ref="parameters"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="json" substitutionGroup="processor">
+    <xs:complexType/>
+  </xs:element>
+  <xs:element name="xslt" substitutionGroup="processor">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="stylesheet"/>
+        <xs:element maxOccurs="1" minOccurs="0" ref="parameters"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  
+  <!-- ================== -->
+  <!-- pipelines          -->
+  <!-- ================== -->
+  <xs:element name="read">
+    <xs:complexType>
+      <xs:sequence minOccurs="1" maxOccurs="unbounded">
+        <xs:element ref="processor"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="write">
+    <xs:complexType>
+      <xs:sequence minOccurs="1" maxOccurs="unbounded">
+        <xs:element ref="processor"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  
+  <!-- ================== -->
+  <!-- files              -->
+  <!-- ================== -->
+  
+  <xs:element name="stylesheet">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:NCName">
+          <xs:attribute name="urn" use="optional" type="nonEmptyUri"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="dir">
+    <xs:complexType mixed="true">
+      <xs:attribute name="urn" use="optional" type="nonEmptyUri"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="jar">
+    <xs:complexType mixed="true">
+      <xs:attribute name="urn" use="optional" type="nonEmptyUri"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="script">
+    <xs:complexType mixed="true">
+      <xs:attribute name="urn" use="optional" type="nonEmptyUri"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:simpleType name="nonEmptyUri">
+    <xs:restriction base="xs:anyURI">
+      <xs:minLength value="1"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <!-- ================== -->
+  <!-- parameters         -->
+  <!-- ================== -->
+  <xs:element name="parameters">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" maxOccurs="unbounded" ref="parameter"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="parameter">
+    <xs:complexType mixed="true">
+      <xs:attribute name="name" use="required" type="xs:NCName"/>
+    </xs:complexType>
+  </xs:element>
+
+  <!-- Java Script -->
+  <xs:element name="method" type="xs:NCName"/>
+  <!-- Excel -->
+  <xs:element name="sheet" type="xs:NCName"/>
+  <!-- Wrap -->
+  <xs:element name="roottag" type="xs:NCName"/>
+  <xs:element name="encoding" type="xs:NCName"/>
+  <!-- Java -->
+  <xs:element name="jars">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" ref="dir"/>
+        <xs:element minOccurs="0" ref="jar"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="class" type="xs:NCName"/>
+</xs:schema>

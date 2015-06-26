@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xglass>
+    <definitions>
+        <urns>
+            <urn name="yoururn" path="yoururnpath"/>
+        </urns>
+    </definitions>
+    <conversions>
+        <conversion protocol="yourprotocolname">
+            <read>
+                <xslt>
+                    <stylesheet>yourstylesheet</stylesheet>
+                </xslt>
+            </read>
+        </conversion>
+    </conversions>
+</xglass>

@@ -1,0 +1,435 @@
+/*
+     ========================================= 
+     created: 2015-06-21
+     by:      Markus Wiedenmaier
+              http://www.practice-innovation.de
+              info@practice-innovation.de
+     Descr.:  CSS layout for oXygen Author Mode - XGlass document types
+     License: delivered "as is" with no warranties
+              feel free in any case
+     =========================================
+ */
+@namespace oxy "http://www.oxygenxml.com/extensions/author";
+
+/*
+ * Human readable XPATH statement for building popup selection in URN Chooser 
+ * 
+ let $urns :=
+ string-join(
+ for $i in /xglass/definitions/urns//urn 
+    return 
+        for $x in $i/ancestor-or-self::urn            
+            return 
+                if  ($i/@name!= $x/@name) 
+                then
+                    concat($x/@name,':', $i/@name,',')
+                else
+                    (
+                    if (not($x/ancestor::urn))
+                    then
+                        concat($i/@name,',')
+                     else
+                        '')
+                     )
+ return 
+ if (/xglass/definitions/urns//urn)
+    then
+        substring($urns,1,string-length($urns)-1)
+    else
+        ''
+ */
+
+oxy|document
+{
+    margin-left:30px;
+    margin-right:15px;
+    margin-top:15px;
+    margin-bottom:15px;
+    font-family:arial, helvetica, sans-serif;
+}
+*
+{
+    display:block;
+    font-family:arial, helvetica, sans-serif;    
+    font-size: 10pt;    
+}
+definitions:before
+{
+    
+}
+definitions
+{
+    border: solid #f0f0f0 1px;
+    margin-top: 10px;
+    margin-bottom: 10px;    
+}
+urns:before
+{
+    background-color: #f0f0f0;
+    content: "URN definitions";
+    width: 100%;
+    padding-bottom:5px;
+    padding-top: 5px;
+    font-weight:bold;
+}
+
+urns > urn:first-child
+{
+    margin-top: 10px;
+}
+urn
+{
+    padding-left: 30px;
+}
+
+conversion
+{
+    border: solid #f0f0f0 1px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    -oxy-foldable:true;
+}
+conversion:before
+{
+    background-color: #f0f0f0;
+    font-weight:bold;
+    width:100%;
+    padding-bottom:5px;
+    padding-top: 5px;
+    content:oxy_label(text, "Protocol: ", width, 150px) 
+            oxy_textfield(edit, '@protocol', columns, 40) 
+    ;
+}
+conversion:focus:before
+{
+    background-color: #f0f0f0;
+    font-weight:bold;
+    width:100%;
+    padding-bottom:5px;
+    padding-top: 5px;
+    content:oxy_label(text, "Protocol: ", width, 150px) 
+            oxy_textfield(edit, '@protocol', columns, 40) 
+            oxy_buttonGroup( label, 'X-Glass actions', tooltip, 'Insert XML fragments to xglass document', 
+                             actionIDs, 'insert.conversion.type,insert.conversion.pipeline.write')
+    ;
+}
+conversion:focus:before! write
+{
+    background-color: #f0f0f0;
+    font-weight:bold;
+    width:100%;
+    padding-bottom:5px;
+    padding-top: 5px;
+    content:oxy_label(text, "Protocol: ", width, 150px) 
+            oxy_textfield(edit, '@protocol', columns, 40) 
+            oxy_buttonGroup( label, 'X-Glass actions', tooltip, 'Insert XML fragments to xglass document', 
+                             actionIDs, 'insert.conversion.type')
+    ;
+}
+
+write
+{
+    margin-top: 10px;
+}
+read,
+write
+{
+    margin-bottom: 10px;
+}
+
+read:before,
+write:before
+{
+    background-color: #f0f0f0;
+    width:100%;
+}
+read:before
+{
+    content: oxy_label(text,"Reading Pipeline",width,100px)
+            oxy_buttonGroup( label, 'Add processor', tooltip, 'Adding processors to read pipepline', 
+                             actionIDs, 'insert.conversion.processor.xslt,insert.conversion.processor.java,insert.conversion.processor.js,insert.conversion.processor.excel,insert.conversion.processor.json,insert.conversion.processor.wrap,insert.conversion.processor.xhtml,insert.conversion.processor.xquery')
+    ;
+}
+write:before
+{
+    content: oxy_label(text,"Writing Pipeline",width,100px)
+            oxy_buttonGroup( label, 'Add processor', tooltip, 'Adding processors to write pipepline', 
+                             actionIDs, 'insert.conversion.processor.xslt,insert.conversion.processor.java,insert.conversion.processor.js,insert.conversion.processor.excel,insert.conversion.processor.json,insert.conversion.processor.wrap,insert.conversion.processor.xhtml,insert.conversion.processor.xquery')
+                             ;
+}
+
+comment
+{
+    color:green;
+    font-style:italic;
+    padding-left:30px; 
+    padding-right:30px;
+    font-size:0.9em;
+}
+
+read > *,
+write > *
+{
+    display:list-item;
+    margin-left:30px; 
+    margin-right:30px;
+}
+read > *:first-child,
+write > *:first-child
+{
+    margin-top:10px;
+}
+
+read > *:before,
+write > *:before
+{
+    content:"Processor: " 
+             oxy_label(text,oxy_xpath('name()'),width,40px) 
+            oxy_label(text,"",width,10px) 
+            oxy_button(actionID, 'delete.element.current',showIcon, true);
+    font-weight:bold;
+}
+
+java:before,
+xslt:before,
+xquery:before
+{
+    content: "Processor: " 
+             oxy_label(text,oxy_xpath('name()'),width,40px) 
+             oxy_label(text,"",width,10px) 
+             oxy_button(actionID, 'delete.element.current',showIcon, true)
+             oxy_button(actionID, 'insert.conversion.processor.parameter',showIcon, false)
+    ;    
+}
+
+java:before! parameters,
+xslt:before! parameters,
+xquery:before! parameters
+{
+    content: "Processor: " 
+             oxy_label(text,oxy_xpath('name()'),width,40px) 
+              oxy_label(text,"",width,10px) 
+              oxy_button(actionID, 'delete.element.current',showIcon, true);
+}
+
+excel > sheet:before
+{
+    content: oxy_label(text, "Excel sheet:", width, 150px)
+             oxy_label(text, "", width, 50px) 
+             oxy_textfield(edit, '#text', columns, 40);
+}
+xslt > stylesheet:before
+{
+    content: oxy_label(text, "Stylesheet:", width, 150px) 
+             oxy_label(text, "Path: ", width, 50px)
+             oxy_urlChooser(edit, '#text',columns, 40,fileFilter,'xsl,xslt')
+             oxy_label(text, " URN: ", width, 50px) 
+             oxy_popup(edit,'@urn', columns, 40, selectionMode, single, values, oxy_xpath("let $urns := string-join(for $i in /*/definitions/urns//urn return for $x in $i/ancestor-or-self::urn return if ($i/@name != $x/@name) then concat($x/@name,':', $i/@name,',') else (if (not($x/ancestor::urn)) then concat($i/@name,',') else '')) return if (/*/definitions/urns//urn) then substring($urns,1,string-length($urns)-1) else ''"))
+             ;
+}
+xslt > stylesheet[urn]:before
+{
+    content: oxy_label(text, "Stylesheet:", width, 150px) 
+             oxy_label(text, "Path: ", width, 50px) 
+             oxy_urlChooser(edit, '#text',columns, 40,fileFilter, 'xsl,xslt')
+             oxy_label(text, " URN: ", width, 50px) 
+             oxy_popup(edit,'@urn', columns, 40, selectionMode, single, values, oxy_xpath("let $urns := string-join(for $i in /*/definitions/urns//urn return for $x in $i/ancestor-or-self::urn return if ($i/@name != $x/@name) then concat($x/@name,':', $i/@name,',') else (if (not($x/ancestor::urn)) then concat($i/@name,',') else '')) return if (/*/definitions/urns//urn) then substring($urns,1,string-length($urns)-1) else ''"))
+             oxy_button(actionID, 'delete.attribute.urn')
+             ;
+}
+js > script:before
+{
+    content: oxy_label(text, "Script:", width, 150px) 
+             oxy_label(text, "Path: ", width, 50px) 
+             oxy_urlChooser(edit, '#text',columns, 40,fileFilter,'js')
+             oxy_label(text, " URN: ", width, 50px) 
+             oxy_popup(edit,'@urn', columns, 40, selectionMode, single, values, oxy_xpath("let $urns := string-join(for $i in /*/definitions/urns//urn return for $x in $i/ancestor-or-self::urn return if ($i/@name != $x/@name) then concat($x/@name,':', $i/@name,',') else (if (not($x/ancestor::urn)) then concat($i/@name,',') else '')) return if (/*/definitions/urns//urn) then substring($urns,1,string-length($urns)-1) else ''"))
+             oxy_button(actionID, 'delete.attribute.urn')
+             ;
+}
+xquery > script:before
+{
+    content: oxy_label(text, "Script:", width, 150px) 
+             oxy_label(text, "Path: ", width, 50px) 
+             oxy_urlChooser(edit, '#text',columns, 40,fileFilter,'xquery')
+             oxy_label(text, " URN: ", width, 50px) 
+             oxy_popup(edit,'@urn', columns, 40, selectionMode, single, values, oxy_xpath("let $urns := string-join(for $i in /*/definitions/urns//urn return for $x in $i/ancestor-or-self::urn return if ($i/@name != $x/@name) then concat($x/@name,':', $i/@name,',') else (if (not($x/ancestor::urn)) then concat($i/@name,',') else '')) return if (/*/definitions/urns//urn) then substring($urns,1,string-length($urns)-1) else ''"))
+             oxy_button(actionID, 'delete.attribute.urn')
+             ;
+}
+js > script[urn]:before
+{
+    content: oxy_label(text, "Script:", width, 150px) 
+             oxy_label(text, "Path: ", width, 50px) 
+             oxy_urlChooser(edit, '#text',columns, 40,fileFilter,'js')
+             oxy_label(text, " URN: ", width, 50px) 
+             oxy_popup(edit,'@urn', columns, 40, selectionMode, single, values, oxy_xpath("let $urns := string-join(for $i in /*/definitions/urns//urn return for $x in $i/ancestor-or-self::urn return if ($i/@name != $x/@name) then concat($x/@name,':', $i/@name,',') else (if (not($x/ancestor::urn)) then concat($i/@name,',') else '')) return if (/*/definitions/urns//urn) then substring($urns,1,string-length($urns)-1) else ''"))
+             oxy_button(actionID, 'delete.attribute.urn')
+             ;
+}
+xquery > script[urn]:before
+{
+    content: oxy_label(text, "Script:", width, 150px) 
+             oxy_label(text, "Path: ", width, 50px) 
+             oxy_urlChooser(edit, '#text',columns, 40,fileFilter,'xquery')
+             oxy_label(text, " URN: ", width, 50px) 
+             oxy_popup(edit,'@urn', columns, 40, selectionMode, single, values, oxy_xpath("let $urns := string-join(for $i in /*/definitions/urns//urn return for $x in $i/ancestor-or-self::urn return if ($i/@name != $x/@name) then concat($x/@name,':', $i/@name,',') else (if (not($x/ancestor::urn)) then concat($i/@name,',') else '')) return if (/*/definitions/urns//urn) then substring($urns,1,string-length($urns)-1) else ''"))
+             oxy_button(actionID, 'delete.attribute.urn')
+             ;
+}
+js > method:before
+{
+    content: oxy_label(text, "Method:", width, 150px) 
+             oxy_label(text, "", width, 50px) 
+             oxy_textfield(edit, '#text', columns, 40);
+}
+parameter:before
+{
+    content: oxy_label(text, "Parameter:", width, 150px) 
+             oxy_label(text, "Name: ", width, 50px) 
+             oxy_textfield(edit, '@name', columns, 40) 
+             oxy_label(text, " Value: ", width, 50px)
+             oxy_textfield(edit, '#text', columns, 40)
+             oxy_button(actionID, 'delete.element.current', showIcon, true)
+             ;
+}
+parameter:last-child:before
+{
+    content: oxy_label(text, "Parameter:", width, 150px) 
+             oxy_label(text, "Name: ", width, 50px) 
+             oxy_textfield(edit, '@name', columns, 40) 
+             oxy_label(text, " Value: ", width, 50px)
+             oxy_textfield(edit, '#text', columns, 40)
+             oxy_button(actionID, 'delete.element.current', showIcon, true)
+             oxy_button(actionID, 'insert.conversion.processor.parameter',showIcon, true)
+             ;
+}
+java > class:before
+{
+    content: oxy_label(text, "Class:", width, 150px) 
+             oxy_label(text, "", width, 50px) 
+             oxy_textfield(edit, '#text', columns, 40);
+}
+java > jars > dir:before
+{
+    content: oxy_label(text, "Jar directory:", width, 150px)
+             oxy_textfield(edit, '#text',columns, 40)
+             oxy_label(text, " URN:", width,50px)
+             oxy_popup(edit,'@urn', columns, 40, selectionMode, single, values, oxy_xpath("let $urns := string-join(for $i in /*/definitions/urns//urn return for $x in $i/ancestor-or-self::urn return if ($i/@name != $x/@name) then concat($x/@name,':', $i/@name,',') else (if (not($x/ancestor::urn)) then concat($i/@name,',') else '')) return if (/*/definitions/urns//urn) then substring($urns,1,string-length($urns)-1) else ''"))
+}
+java > jars > dir[urn]:before
+{
+    content: oxy_label(text, "Jar directory:", width, 150px) 
+             oxy_textfield(edit, '#text',columns, 40)
+             oxy_label(text, " URN:", width,50px)
+             oxy_popup(edit,'@urn', columns, 40, selectionMode, single, values, oxy_xpath("let $urns := string-join(for $i in /*/definitions/urns//urn return for $x in $i/ancestor-or-self::urn return if ($i/@name != $x/@name) then concat($x/@name,':', $i/@name,',') else (if (not($x/ancestor::urn)) then concat($i/@name,',') else '')) return if (/*/definitions/urns//urn) then substring($urns,1,string-length($urns)-1) else ''"))
+             oxy_button(actionID, 'delete.attribute.urn')
+             ;
+}
+java > jars > jar:before
+{
+    content: oxy_label(text, "Jar file:", width, 150px) 
+             oxy_label(text, "File: ", width, 50px) 
+             oxy_urlChooser(edit, '#text',columns, 40,fileFilter,'jar')
+             oxy_label(text, " URN: ", width, 50px) 
+             oxy_popup(edit,'@urn', columns, 40, selectionMode, single, values, oxy_xpath("let $urns := string-join(for $i in /*/definitions/urns//urn return for $x in $i/ancestor-or-self::urn return if ($i/@name != $x/@name) then concat($x/@name,':', $i/@name,',') else (if (not($x/ancestor::urn)) then concat($i/@name,',') else '')) return if (/*/definitions/urns//urn) then substring($urns,1,string-length($urns)-1) else ''"))
+             ;
+}
+java > jars > jar[urn]:before
+{
+    content: oxy_label(text, "Jar file:", width, 150px) 
+             oxy_label(text, "File: ", width, 50px) 
+             oxy_urlChooser(edit, '#text',columns, 40,fileFilter,'jar')
+             oxy_label(text, " URN: ", width, 50px) 
+             oxy_popup(edit,'@urn', columns, 40, selectionMode, single, values, oxy_xpath("let $urns := string-join(for $i in /*/definitions/urns//urn return for $x in $i/ancestor-or-self::urn return if ($i/@name != $x/@name) then concat($x/@name,':', $i/@name,',') else (if (not($x/ancestor::urn)) then concat($i/@name,',') else '')) return if (/*/definitions/urns//urn) then substring($urns,1,string-length($urns)-1) else ''"))
+             oxy_button(actionID, 'delete.attribute.urn')
+             ;
+}
+wrap > roottag:before
+{
+    content: oxy_label(text, "Root:", width, 150px) 
+             oxy_label(text, "", width, 50px) 
+             oxy_textfield(edit, '#text', columns, 40);
+}
+wrap > encoding:before
+{
+    content: oxy_label(text, "Encoding:", width, 150px) 
+             oxy_label(text, "", width, 50px) 
+             oxy_textfield(edit, '#text', columns, 40);
+}
+urn:before
+{
+    content: oxy_label(text, "URN definition:", width, 150px) 
+             oxy_label(text, "Name: ", width, 50px) 
+             oxy_textfield(edit, '@name', columns, 40) 
+             oxy_label(text, " Path: ", width, 50px) 
+             oxy_textfield(edit, '@path', columns, 40)
+             oxy_button(actionID, 'delete.element.current',showIcon, true)
+             ;
+}
+urn:last-child:before
+{
+    content: oxy_label(text, "URN definition:", width, 150px) 
+             oxy_label(text, "Name: ", width, 50px) 
+             oxy_textfield(edit, '@name', columns, 40) 
+             oxy_label(text, " Path: ", width, 50px) 
+             oxy_textfield(edit, '@path', columns, 40)
+             oxy_button(actionID, 'delete.element.current',showIcon, true)
+             oxy_button(actionID, 'insert.definition.urn',showIcon, true)
+             ;
+}
+urn > urn:before
+{
+    content: oxy_label(text, "URN definition:", width, 120px) 
+             oxy_label(text, "Name: ", width, 50px) oxy_textfield(edit, '@name', columns, 40) 
+             oxy_label(text, " Path: ", width, 50px) oxy_textfield(edit, '@path', columns, 40) 
+             oxy_button(actionID, 'delete.element.current',showIcon, true)
+             ;
+}
+urn > urn:last-child:before
+{
+    content: oxy_label(text, "URN definition:", width, 120px) 
+             oxy_label(text, "Name: ", width, 50px) 
+             oxy_textfield(edit, '@name', columns, 40) 
+             oxy_label(text, " Path: ", width, 50px) 
+             oxy_textfield(edit, '@path', columns, 40)
+             oxy_button(actionID, 'delete.element.current',showIcon, true)
+             oxy_button(actionID, 'insert.definition.urn',showIcon, true)
+             ;
+}
+urn > urn > urn:before
+{
+    content: oxy_label(text, "URN definition:", width, 90px) 
+             oxy_label(text, "Name: ", width, 50px) 
+             oxy_textfield(edit, '@name', columns, 40) 
+             oxy_label(text, "Path: ", width, 50px)
+             oxy_textfield(edit, '@path', columns, 40)
+             oxy_button(actionID, 'delete.element.current',showIcon, true)
+             ;
+}
+urn > urn > urn:last-child:before
+{
+    content: oxy_label(text, "URN definition:", width, 90px) 
+             oxy_label(text, "Name: ", width, 50px) 
+             oxy_textfield(edit, '@name', columns, 40) 
+             oxy_label(text, " Path: ", width, 50px) 
+             oxy_textfield(edit, '@path', columns, 40)
+             oxy_button(actionID, 'delete.element.current',showIcon, true)
+             oxy_button(actionID, 'insert.definition.urn',showIcon, true)
+             ;
+}
+
+
+excel > sheet,
+xslt > stylesheet,
+xquery > script,
+js > script,
+js > method,
+java > class,
+java > jars > *,
+wrap > roottag,
+wrap > encoding,
+parameter
+{
+    visibility:-oxy-collapse-text;   
+}

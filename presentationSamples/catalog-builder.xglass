@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Build the catalog file from the xglass intermediary format. -->
+<xglass>
+    <definitions>
+        <urns>
+            <urn name="files" path="resources"/>
+            <urn name="processors:md" path="processors/pagedown"/>
+            <urn name="processors" path="processors"/>
+        </urns>
+    </definitions>
+    <conversions>
+        <conversion protocol="excel2dita">
+            <comment>Excel 2 DITA</comment>
+            <read>
+                <excel>
+                    <sheet>sample</sheet>
+                </excel>
+                <xslt>
+                    <stylesheet urn="processors">excel2d.xsl</stylesheet>
+                </xslt>
+            </read>
+        </conversion>
+        <conversion protocol="html2dita">
+            <comment>HTML 2 DITA</comment>
+            <read>
+                <xhtml/>
+                <xslt>
+                    <stylesheet urn="processors">h2d.xsl</stylesheet>
+                </xslt>
+            </read>
+        </conversion>
+        <conversion protocol="md2dita">
+            <comment>MarkDown to DITA</comment>
+            <read>
+                <js>
+                    <script urn="processors">pagedown%2FMarkdown.Converter.js</script>
+                    <method>convertExternal</method>
+                </js>
+                <xhtml/>
+                <xslt>
+                    <stylesheet urn="processors">h2d.xsl</stylesheet>
+                </xslt>
+            </read>
+        </conversion>
+        <conversion protocol="xsd2dita">
+            <comment>XML Schema to DITA</comment>
+            <read>
+                <xslt>
+                    <stylesheet urn="processors">xsdToTopic.xsl</stylesheet>
+                </xslt>
+            </read>
+        </conversion>
+        <conversion protocol="javadoc2dita">
+            <comment>Javadoc HTML file to DITA topic</comment>
+            <read>
+                <xhtml/>
+                <xslt>
+                    <stylesheet urn="processors">javaDocToTopic.xsl</stylesheet>
+                </xslt>
+            </read>
+        </conversion>
+        <conversion protocol="javadoc2ditamap">
+            <comment>Javadoc frameset to DITA Map</comment>
+            <read>
+                <xhtml/>
+                <xslt>
+                    <stylesheet urn="processors">javaDocToMap.xsl</stylesheet>
+                </xslt>
+            </read>
+        </conversion>
+        <conversion protocol="java2dita">
+            <comment>Java source class to DITA</comment>
+            <read>
+                <java>
+                    <jars>
+                        <dir urn="processors">jars</dir>
+                    </jars>
+                    <class>j.to.xml.JavaToXML</class>
+                </java>
+                <xslt>
+                    <stylesheet urn="processors">javaToTopic.xsl</stylesheet>
+                </xslt>
+            </read>
+        </conversion>
+        <conversion protocol="gs2dita">
+            <comment>Google Sheets to DITA</comment>
+            <read>
+                <xhtml/>
+                <xslt>
+                    <stylesheet urn="processors">googleSheets2dita.xsl</stylesheet>
+                </xslt>
+                <xslt>
+                    <stylesheet urn="processors">h2d.xsl</stylesheet>
+                </xslt>
+            </read>
+        </conversion>
+        <conversion protocol="md2html">
+            <comment>MarkDown to HTML</comment>
+            <read>
+                <js>
+                    <script urn="processors">pagedown%2FMarkdown.Converter.js</script>
+                    <method>convertExternal</method>
+                </js>
+                <xhtml/>
+            </read>
+        </conversion>
+        <conversion protocol="csv2dita">
+            <comment>Comma Separated (CSV) to DITA and back.</comment>
+            <write>
+                <xslt>
+                    <stylesheet urn="processors">dita2csv.xsl</stylesheet>
+                </xslt>                
+            </write>
+            <read>
+                <wrap/>
+                <xslt>
+                    <stylesheet urn="processors">csvtext2dita.xsl</stylesheet>
+                </xslt>
+            </read>
+        </conversion>
+        <conversion protocol="rocsv2dita">
+            <comment>Read-only Comma Separated (CSV) to DITA</comment>
+            <read>
+                <wrap/>
+                <xslt>
+                    <stylesheet urn="processors">csvtext2dita.xsl</stylesheet>
+                </xslt>
+            </read>
+        </conversion>
+    </conversions>
+</xglass>
