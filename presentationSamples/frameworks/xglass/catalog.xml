@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?><!--Catalog file automatically generated from an xglass XML configuration file.--><catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog"><!--resource collections-->
-    <rewriteURI uriStartString="urn:files:" rewritePrefix="resources/"/>
+    <rewriteURI uriStartString="urn:files:" rewritePrefix="../../resources/"/>
     <rewriteURI uriStartString="urn:processors:md:" rewritePrefix="processors/pagedown/"/>
     <rewriteURI uriStartString="urn:processors:" rewritePrefix="processors/"/><!--aliases for conversion protocols-->
     <!--Excel 2 DITA-->

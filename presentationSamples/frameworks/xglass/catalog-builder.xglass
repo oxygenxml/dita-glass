@@ -3,7 +3,7 @@
 <xglass>
     <definitions>
         <urns>
-            <urn name="files" path="resources"/>
+            <urn name="files" path="../../resources"/>
             <urn name="processors:md" path="processors/pagedown"/>
             <urn name="processors" path="processors"/>
         </urns>
