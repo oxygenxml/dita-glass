@@ -5,7 +5,20 @@
     version="2.0">
     <xsl:output method="xml" doctype-public="-//OASIS//DTD DITA Topic//EN" 
         doctype-system="http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd" indent="yes"/>
-    <xsl:template match="//sheet[1]">
+    <xsl:template match="sheets">
+        <xsl:choose>
+            <xsl:when test="count(sheet) > 1">
+                <topic id="sheets">
+                    <title>Multiple Excel Sheets:</title>
+                    <xsl:apply-templates/>
+                </topic>
+            </xsl:when>
+            <xsl:otherwise>
+                <xsl:apply-templates/>
+            </xsl:otherwise>
+        </xsl:choose>
+    </xsl:template>
+    <xsl:template match="sheet">
         <topic id="{@name}">
             <title>[Excel] Imported Table "<xsl:value-of select="@name"/>" </title>
             <body>
