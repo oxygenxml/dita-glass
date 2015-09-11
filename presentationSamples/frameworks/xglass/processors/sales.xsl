@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">    
     <xsl:output method="xml" indent="yes" version="1.0" encoding="ISO-8859-1"/>
-    <xsl:template match="data">
+    <xsl:template match="sheet">
         <!-- Define the sizes-->
         <svg xmlns="http://www.w3.org/2000/svg" width="540" height="300" viewBox="0 0 800 400">
             <g transform="translate(-60,20)">
                 <!-- The title -->
                 <text style="font-size:18" x="400" y="5" font-family="Dialog">
-                    <xsl:value-of select="description"/>
+                    <xsl:value-of select="row[1]/Heading0"/>
                 </text>
                 <!-- The x and y axes  -->
                 <g style="stroke-width:2; stroke:black">
@@ -52,7 +52,7 @@
                     <stop style="stop-color:red" offset="1"/>
                 </radialGradient>
                 <!-- Draw one bar for entry-->
-                <xsl:for-each select="entry">
+                <xsl:for-each select="row[position() > 1]">
                     <!-- Select the gradient. -->
                     <xsl:variable name="gradient-index" select="(position() mod 3) + 1"/>
                     <!-- Maps the position into a name of the month.-->
@@ -79,7 +79,7 @@
                     <xsl:variable name="x-offset" select="76 + (position() * 60)"/>
                     <xsl:variable name="y-offset" select="261"/>
                     <!-- Calculate height of bar for a specific entry-->
-                    <xsl:variable name="y" select="$y-offset - sum(text())"/>
+                    <xsl:variable name="y" select="$y-offset - sum(Heading0/text())"/>
                     <!-- The bar uses the gradient-->
                     <path d="M {$x-offset - 20} {$y-offset} L {$x-offset - 20} {$y} L {$x-offset + 20} {$y} L {$x-offset + 20} {$y-offset} Z">
                         <xsl:attribute name="style" xml:space="preserve">stroke-width:2; stroke:black; fill:url(#<xsl:value-of select="$grad"/>)</xsl:attribute>

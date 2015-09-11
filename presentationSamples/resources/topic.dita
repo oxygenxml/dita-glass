@@ -3,6 +3,8 @@
 <topic id="topic_lkq_lg2_vq">
   <title>[SVG] Sales Graph</title>
   <body>
-   <p><image href="convert:/processor=xslt;ss=urn:processors:sales.xsl!/urn:files:sales.xml"/></p>
+    <p><image
+        href="convert:/processor=xslt;ss=urn:processors:sales.xsl/processor=excel;sn=Sheet1!/urn:files:sales.xls"
+      /></p>
   </body>
 </topic>

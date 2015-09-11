@@ -23,7 +23,7 @@
             <title>[Excel] Imported Table "<xsl:value-of select="@name"/>" </title>
             <body>
                 <table frame="none" id="table_{@name}">
-                    <title>Flowers</title>
+                    <title>Car Parts</title>
                     <tgroup>
                         <xsl:attribute name="cols"><xsl:value-of select="count(//row[1]/*)"/></xsl:attribute>
                         <thead>
