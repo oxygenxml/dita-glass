@@ -127,5 +127,14 @@
                 </xslt>
             </read>
         </conversion>
+        <conversion protocol="props2dita">
+            <comment>Java Properties file to DITA</comment>
+            <read>
+                <wrap/>
+                <xslt>
+                    <stylesheet urn="processors">props2dita.xsl</stylesheet>
+                </xslt>
+            </read>
+        </conversion>
     </conversions>
 </xglass>

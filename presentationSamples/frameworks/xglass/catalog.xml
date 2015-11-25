@@ -24,4 +24,6 @@
     <rewriteURI uriStartString="csv2dita:/" rewritePrefix="convert:/rprocessor=xslt;ss=urn:processors:dita2csv.xsl/processor=xslt;ss=urn:processors:csvtext2dita.xsl/processor=wrap!/"/>
     <!--Read-only Comma Separated (CSV) to DITA-->
     <rewriteURI uriStartString="rocsv2dita:/" rewritePrefix="convert:/processor=xslt;ss=urn:processors:csvtext2dita.xsl/processor=wrap!/"/>
+    <!--Java Properties file to DITA-->
+    <rewriteURI uriStartString="props2dita:/" rewritePrefix="convert:/processor=xslt;ss=urn:processors:props2dita.xsl/processor=wrap!/"/>
 </catalog>

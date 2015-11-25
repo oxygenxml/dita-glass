@@ -11,4 +11,5 @@
  <topicref href="resources/topic.dita" format="dita"/>
  
  <topicref href="csv2dita:/urn:files:sample.csv" format="dita"/>
+ <topicref href="props2dita:/urn:files:languageList.properties" format="dita"/>
 </map>
