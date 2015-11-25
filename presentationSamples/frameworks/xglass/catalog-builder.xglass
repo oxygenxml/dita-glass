@@ -130,7 +130,9 @@
         <conversion protocol="props2dita">
             <comment>Java Properties file to DITA</comment>
             <read>
-                <wrap/>
+                <wrap>
+                    <encoding>ISO-8859-1</encoding>
+                </wrap>
                 <xslt>
                     <stylesheet urn="processors">props2dita.xsl</stylesheet>
                 </xslt>
