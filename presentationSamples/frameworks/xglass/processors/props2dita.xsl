@@ -47,7 +47,15 @@
         <xsl:param name="str" as="xs:string"/>
         <xsl:analyze-string select="concat($str, '�')" regex='(("[^"]*")+|[^,]*)�'>
             <xsl:matching-substring>
-                <xsl:sequence select="substring-before(., '=')"/>
+                <xsl:variable name="unparsed">
+                    &lt;x><xsl:value-of select="replace(
+                        replace(
+                        replace(replace(substring-before(., '='), '\\u([0-9a-fA-F]{4})', '&amp;#x$1;'),
+                        $newlineWithSpace, ' '),
+                        $newlineWithoutSpace, ''),
+                        $lineFeedChar, '')"/>&lt;/x>
+                </xsl:variable>
+                <xsl:value-of select="saxon:parse($unparsed)/*/text()"/>
             </xsl:matching-substring>
         </xsl:analyze-string>
     </xsl:function>
