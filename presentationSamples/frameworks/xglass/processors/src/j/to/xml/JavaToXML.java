@@ -105,7 +105,6 @@ public class JavaToXML {
 									wr.write("\n <param>");
 									wr.write("\n  <type>");
 									wr.write(param.getType().toString());
-									System.err.println("-----" + param.getComment());
 									wr.write("</type>");
 									wr.write("\n  <name>");
 									wr.write(param.getId().toString());
@@ -128,15 +127,7 @@ public class JavaToXML {
 			throw new IOException(ex);
 		}
 	}
-	
-		public static void main(String[] args) throws ParseException, IOException {
-		ByteArrayOutputStream bos = new ByteArrayOutputStream();
-		  // creates an input stream for the file to be parsed
-        FileInputStream in = new FileInputStream("D:/projects/eXml/src/ro/sync/exml/workspace/api/PluginWorkspace.java");
-        javaToXML(in, bos);
-        System.err.println(new String(bos.toByteArray()));
-	}
-	
+		
 	/**
    * Convert.
    * 
