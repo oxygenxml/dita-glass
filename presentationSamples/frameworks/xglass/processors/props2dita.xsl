@@ -86,20 +86,23 @@
         <topic id="properties">
             <title>Reusable User Interface Actions</title>
             <body>
-                <ul>
+                <dl>
                     <xsl:for-each select="$lines">
                         <xsl:variable name="key" select="fn:getKey(.)" as="xs:string+"/>
                         <xsl:variable name="value" select="fn:getValue(.)" as="xs:string+"/>
                         <xsl:if test="$key != '' and $value != ''">
-                            <xsl:element name="li">
-                                <xsl:element name="ph">
-                                    <xsl:attribute name="id"><xsl:value-of select="$key"/></xsl:attribute>
-                                    <xsl:value-of select="$value"/>
-                                </xsl:element>
-                            </xsl:element>                                
+                            <dlentry>
+                                <dt><xsl:value-of select="$key"/></dt> 
+                                <dd>
+                                    <ph>
+                                        <xsl:attribute name="id"><xsl:value-of select="$key"/></xsl:attribute>
+                                        <xsl:value-of select="$value"/>
+                                    </ph>
+                                </dd>
+                            </dlentry>                                
                         </xsl:if>
                     </xsl:for-each>
-                </ul>
+                </dl>
             </body>
         </topic>
     </xsl:template>
