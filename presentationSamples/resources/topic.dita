@@ -4,7 +4,7 @@
   <title>[SVG] Sales Graph</title>
   <body>
     <p><image
-        href="convert:/processor=xslt;ss=urn:processors:sales.xsl/processor=excel;sn=Sheet1!/urn:files:sales.xls"
+        href="excel2svg:/urn:files:sales.xls"
       /></p>
   </body>
 </topic>
