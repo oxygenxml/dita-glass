@@ -6,5 +6,7 @@
     <p><image
         href="excel2svg:/sales.xls"
       /></p>
+    
+    <p>Add first choice particle: <ph conkeyref="uiLabels/Add_first_choice_particle"/></p>
   </body>
 </topic>
