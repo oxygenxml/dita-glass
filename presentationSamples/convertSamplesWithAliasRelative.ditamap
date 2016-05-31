@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN" "map.dtd">
+<map>
+ <title>DITA Glass</title>
+ <topicref href="excel2dita:/resources/sample.xls" format="dita"/>
+ <topicref href="html2dita:/resources/care.html" format="dita"/>
+ <topicref href="md2dita:/resources/sample.md" format="dita"/>
+ <topicref href="xsd2dita:/resources/xsd/personal.xsd" format="dita"/>
+ <topicref href="javadoc2dita:/resources/javadoc/ro/sync/ecss/component/editor/ButtonEditor.html" format="dita"/>
+ <topicref href="java2dita:/resources/java/WSEditorBase.java" format="dita"/>
+ <topicref href="resources/topicRelative.dita" format="dita"/>
+ 
+ <topicref href="csv2dita:/resources/sample.csv" format="dita"/>
+ <!-- Converts a Java properties file to a DITA topic. -->
+ <keydef href="props2dita:/resources/languageList.properties" format="dita" keys="uiLabels"/>
+</map>
