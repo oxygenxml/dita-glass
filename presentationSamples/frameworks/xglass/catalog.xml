@@ -26,4 +26,6 @@
     <rewriteURI uriStartString="rocsv2dita:/" rewritePrefix="convert:/processor=xslt;ss=urn:processors:csvtext2dita.xsl/processor=wrap!/"/>
     <!--Java Properties file to DITA-->
     <rewriteURI uriStartString="props2dita:/" rewritePrefix="convert:/processor=xslt;ss=urn:processors:props2dita.xsl/processor=wrap;encoding=ISO-8859-1!/"/>
+    <!--Excel to SVG-->
+    <rewriteURI uriStartString="excel2svg:/" rewritePrefix="convert:/processor=xslt;ss=urn:processors:sales.xsl/processor=excel;sn=Sheet1!/"/>
 </catalog>
