@@ -101,7 +101,7 @@
   <xs:element name="excel" substitutionGroup="processor">
     <xs:complexType>
       <xs:sequence>
-        <xs:element ref="sheet"/>
+        <xs:element ref="sheet" minOccurs="0"/>
       </xs:sequence>
     </xs:complexType>
   </xs:element>
