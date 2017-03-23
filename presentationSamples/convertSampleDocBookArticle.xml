@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://docbook.org/xml/5.0/rng/docbook.rng" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="http://docbook.org/xml/5.0/rng/docbook.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<article xmlns="http://docbook.org/ns/docbook"
+    xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0">
+    <info>
+        <title>Sample Docbook Article with Excel table</title>
+    </info>
+    <xi:include href="convert:/processor=xslt;ss=urn:processors:excel2docbook.xsl/processor=excel!/urn:files:sample.xls" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+</article>
