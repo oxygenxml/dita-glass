@@ -147,14 +147,14 @@ read:before
 {
     content: oxy_label(text,"Reading Pipeline",width,100px)
             oxy_buttonGroup( label, 'Add processor', tooltip, 'Adding processors to read pipepline', 
-                             actionIDs, 'insert.conversion.processor.xslt,insert.conversion.processor.java,insert.conversion.processor.js,insert.conversion.processor.excel,insert.conversion.processor.json,insert.conversion.processor.wrap,insert.conversion.processor.xhtml,insert.conversion.processor.xquery')
+                             actionIDs, 'insert.conversion.processor.xslt,insert.conversion.processor.java,insert.conversion.processor.js,insert.conversion.processor.excel,insert.conversion.processor.json,insert.conversion.processor.wrap,insert.conversion.processor.xhtml,insert.conversion.processor.xquery,insert.conversion.processor.cache')
     ;
 }
 write:before
 {
     content: oxy_label(text,"Writing Pipeline",width,100px)
             oxy_buttonGroup( label, 'Add processor', tooltip, 'Adding processors to write pipepline', 
-                             actionIDs, 'insert.conversion.processor.xslt,insert.conversion.processor.java,insert.conversion.processor.js,insert.conversion.processor.excel,insert.conversion.processor.json,insert.conversion.processor.wrap,insert.conversion.processor.xhtml,insert.conversion.processor.xquery')
+                             actionIDs, 'insert.conversion.processor.xslt,insert.conversion.processor.java,insert.conversion.processor.js,insert.conversion.processor.excel,insert.conversion.processor.json,insert.conversion.processor.wrap,insert.conversion.processor.xhtml,insert.conversion.processor.xquery,insert.conversion.processor.cache')
                              ;
 }
 

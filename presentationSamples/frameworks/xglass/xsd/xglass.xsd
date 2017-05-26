@@ -144,6 +144,9 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="cache" substitutionGroup="processor">
+    <xs:complexType/>
+  </xs:element>
   
   <!-- ================== -->
   <!-- pipelines          -->
