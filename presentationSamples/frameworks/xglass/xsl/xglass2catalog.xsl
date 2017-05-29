@@ -233,6 +233,13 @@
         <xsl:value-of select="."/>
         <xsl:text>;</xsl:text>
     </xsl:template>
+    <!-- ========== -->
+    <!-- cache      -->
+    <!-- ========== -->
+    <xsl:template match="cache">
+        <xsl:call-template name="writeProcessor"/>
+        <!-- no parameters -->
+    </xsl:template>
     
     <!-- ========== -->
     <!-- parameters -->
