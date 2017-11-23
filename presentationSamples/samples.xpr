@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project version="17.0">
+<project version="20.0">
     <meta>
         <filters directoryPatterns="" filePatterns="" positiveFilePatterns="" showHiddenFiles="false"/>
         <options>
-            <serialized version="17.0" xml:space="preserve">
+            <serialized version="20.0" xml:space="preserve">
                 <serializableOrderedMap>
                     <entry>
                         <String>additional.frameworks.directories</String>
@@ -28,6 +28,21 @@
                     <entry>
                         <String>scenario.associations</String>
                         <scenarioAssociation-array>
+                            <scenarioAssociation>
+                                <field name="url">
+                                    <String>convertSamples.ditamap</String>
+                                </field>
+                                <field name="scenarioIds">
+                                    <list>
+                                        <String>WebHelp (convert)</String>
+                                    </list>
+                                </field>
+                                <field name="scenarioTypes">
+                                    <list>
+                                        <String>DITAMAP</String>
+                                    </list>
+                                </field>
+                            </scenarioAssociation>
                             <scenarioAssociation>
                                 <field name="url">
                                     <String>convertSamplesWithAlias.ditamap</String>
@@ -94,7 +109,7 @@
                                             <null/>
                                         </field>
                                         <field name="ditavalFilePath">
-                                            <String></String>
+                                            <null/>
                                         </field>
                                         <field name="simpleFiltersList">
                                             <list/>
@@ -102,12 +117,18 @@
                                     </ditavalFilters>
                                 </field>
                                 <field name="addOxygenJars">
-                                    <Boolean>true</Boolean>
+                                    <Boolean>false</Boolean>
                                 </field>
                                 <field name="skinCssFile">
                                     <null/>
                                 </field>
                                 <field name="lastCustomSkinCssPath">
+                                    <null/>
+                                </field>
+                                <field name="webhelpResponsiveTemplate">
+                                    <null/>
+                                </field>
+                                <field name="publishingTemplateDataPO">
                                     <null/>
                                 </field>
                                 <field name="additionalAntArgs">
@@ -142,6 +163,12 @@
                                                     <String>true</String>
                                                     <String>false</String>
                                                     <null/>
+                                                </String-array>
+                                            </field>
+                                            <field name="possibleValuesDescriptions">
+                                                <String-array>
+                                                    <String></String>
+                                                    <String></String>
                                                 </String-array>
                                             </field>
                                         </ditaParameter>
@@ -251,227 +278,51 @@
                                 </field>
                                 <field name="extensionURLs">
                                     <String-array>
-                                        <String>${oxygenHome}/lib/poi-3.10-FINAL-20140208.jar</String>
+                                        <String>${dita.dir.url}/lib/commons-io*.jar</String>
+                                        <String>${dita.dir.url}/config/</String>
+                                        <String>${oxygenHome}/classes/</String>
+                                        <String>${oxygenHome}/lib/oxygen.jar</String>
+                                        <String>${oxygenHome}/lib/oxygenAuthor.jar</String>
+                                        <String>${oxygenHome}/lib/oxygenDeveloper.jar</String>
+                                        <String>${oxygenHome}/lib/oxygenEclipse.jar</String>
+                                        <String>${oxygenHome}/lib/oxygenAuthorEclipse.jar</String>
+                                        <String>${oxygenHome}/lib/oxygenDeveloperEclipse.jar</String>
+                                        <String>${oxygenHome}/lib/oxygen-webhelp-indexer.jar</String>
+                                        <String>${oxygenHome}/lib/oxygen-publishing-template.jar</String>
+                                        <String>${oxygenHome}/lib/oxygen-webhelp-xslt-extensions.jar</String>
+                                        <String>${oxygenHome}/lib/resolver.jar</String>
+                                        <String>${oxygenHome}/lib/oxygen-token-markers.jar</String>
+                                        <String>${oxygenHome}/lib/org.eclipse.wst.xml.xpath2.processor_*.jar</String>
+                                        <String>${oxygenHome}/lib/xml-apis.jar</String>
+                                        <String>${oxygenHome}/lib/xercesImpl.jar</String>
+                                        <String>${oxygenHome}/lib/commons-io*.jar</String>
+                                        <String>${oxygenHome}/lib/commons-logging*.jar</String>
+                                        <String>${oxygenHome}/lib/log4j.jar</String>
+                                        <String>${dita.dir.url}/lib/commons-codec*.jar</String>
+                                        <String>${oxygenHome}/lib/jing.jar</String>
+                                        <String>${oxygenHome}/lib/saxon9ee.jar</String>
+                                        <String>${oxygenHome}/lib/saxon.jar</String>
+                                        <String>${oxygenHome}/lib/xmlgraphics-commons*.jar</String>
+                                        <String>${oxygenHome}/lib/fop.jar</String>
+                                        <String>${oxygenHome}/lib/fontbox-*.jar</String>
+                                        <String>${oxygenHome}/lib/batik-all*.jar</String>
                                         <String>${oxygenHome}/lib/js.jar</String>
+                                        <String>${oxygenHome}/lib/poi*.jar</String>
                                         <String>${oxygenHome}/lib/nekohtml.jar</String>
-                                    </String-array>
-                                </field>
-                            </ditaScenario>
-                            <ditaScenario>
-                                <field name="useXEP">
-                                    <Boolean>false</Boolean>
-                                </field>
-                                <field name="useAntennaHouse">
-                                    <Boolean>false</Boolean>
-                                </field>
-                                <field name="baseDir">
-                                    <String>${cfd}</String>
-                                </field>
-                                <field name="outputDir">
-                                    <String>${cfd}/out/webhelp</String>
-                                </field>
-                                <field name="tempDir">
-                                    <String>${cfd}/temp/webhelp</String>
-                                </field>
-                                <field name="transtype">
-                                    <String>webhelp</String>
-                                </field>
-                                <field name="filters">
-                                    <ditavalFilters>
-                                        <field name="useDitavalFilePath">
-                                            <Boolean>false</Boolean>
-                                        </field>
-                                        <field name="useAppliedConditionSet">
-                                            <Boolean>true</Boolean>
-                                        </field>
-                                        <field name="appliedConditionSet">
-                                            <null/>
-                                        </field>
-                                        <field name="ditavalFilePath">
-                                            <String></String>
-                                        </field>
-                                        <field name="simpleFiltersList">
-                                            <list/>
-                                        </field>
-                                    </ditavalFilters>
-                                </field>
-                                <field name="addOxygenJars">
-                                    <Boolean>true</Boolean>
-                                </field>
-                                <field name="skinCssFile">
-                                    <null/>
-                                </field>
-                                <field name="lastCustomSkinCssPath">
-                                    <null/>
-                                </field>
-                                <field name="additionalAntArgs">
-                                    <String></String>
-                                </field>
-                                <field name="buildTarget">
-                                    <String></String>
-                                </field>
-                                <field name="buildFilePath">
-                                    <String></String>
-                                </field>
-                                <field name="ditaParams">
-                                    <list>
-                                        <ditaParameter>
-                                            <field name="name">
-                                                <String>args.xhtml.classattr</String>
-                                            </field>
-                                            <field name="description">
-                                                <null/>
-                                            </field>
-                                            <field name="value">
-                                                <String>yes</String>
-                                            </field>
-                                            <field name="defaultValue">
-                                                <String>yes</String>
-                                            </field>
-                                            <field name="type">
-                                                <Integer>4</Integer>
-                                            </field>
-                                            <field name="possibleValues">
-                                                <String-array>
-                                                    <String>yes</String>
-                                                    <String>no</String>
-                                                    <null/>
-                                                </String-array>
-                                            </field>
-                                        </ditaParameter>
-                                        <ditaParameter>
-                                            <field name="name">
-                                                <String>fix.external.refs.com.oxygenxml</String>
-                                            </field>
-                                            <field name="description">
-                                                <null/>
-                                            </field>
-                                            <field name="value">
-                                                <String>true</String>
-                                            </field>
-                                            <field name="defaultValue">
-                                                <String>false</String>
-                                            </field>
-                                            <field name="type">
-                                                <Integer>4</Integer>
-                                            </field>
-                                            <field name="possibleValues">
-                                                <String-array>
-                                                    <String>true</String>
-                                                    <String>false</String>
-                                                    <null/>
-                                                </String-array>
-                                            </field>
-                                        </ditaParameter>
-                                    </list>
-                                </field>
-                                <field name="jvmArgs">
-                                    <String>-Xmx384m -Dcom.oxygenxml.allow.external.scripts=true</String>
-                                </field>
-                                <field name="useCustomJavaHome">
-                                    <Boolean>false</Boolean>
-                                </field>
-                                <field name="customJavaHomeDir">
-                                    <String></String>
-                                </field>
-                                <field name="useCustomANTHome">
-                                    <Boolean>false</Boolean>
-                                </field>
-                                <field name="customANTHomeDir">
-                                    <String></String>
-                                </field>
-                                <field name="workingDir">
-                                    <null/>
-                                </field>
-                                <field name="showConsoleAlways">
-                                    <Boolean>true</Boolean>
-                                </field>
-                                <field name="advancedOptionsMap">
-                                    <null/>
-                                </field>
-                                <field name="name">
-                                    <String>WebHelp (convert)</String>
-                                </field>
-                                <field name="baseURL">
-                                    <null/>
-                                </field>
-                                <field name="footerURL">
-                                    <null/>
-                                </field>
-                                <field name="fOPMethod">
-                                    <null/>
-                                </field>
-                                <field name="fOProcessorName">
-                                    <null/>
-                                </field>
-                                <field name="headerURL">
-                                    <null/>
-                                </field>
-                                <field name="inputXSLURL">
-                                    <null/>
-                                </field>
-                                <field name="inputXMLURL">
-                                    <null/>
-                                </field>
-                                <field name="defaultScenario">
-                                    <Boolean>false</Boolean>
-                                </field>
-                                <field name="isFOPPerforming">
-                                    <Boolean>false</Boolean>
-                                </field>
-                                <field name="type">
-                                    <String>DITAMAP</String>
-                                </field>
-                                <field name="saveAs">
-                                    <Boolean>true</Boolean>
-                                </field>
-                                <field name="openInBrowser">
-                                    <Boolean>true</Boolean>
-                                </field>
-                                <field name="outputFile">
-                                    <null/>
-                                </field>
-                                <field name="outputResource">
-                                    <null/>
-                                </field>
-                                <field name="openOtherLocationInBrowser">
-                                    <Boolean>false</Boolean>
-                                </field>
-                                <field name="locationToOpenInBrowserURL">
-                                    <String></String>
-                                </field>
-                                <field name="openInEditor">
-                                    <Boolean>false</Boolean>
-                                </field>
-                                <field name="showInHTMLPane">
-                                    <Boolean>false</Boolean>
-                                </field>
-                                <field name="showInXMLPane">
-                                    <Boolean>false</Boolean>
-                                </field>
-                                <field name="showInSVGPane">
-                                    <Boolean>false</Boolean>
-                                </field>
-                                <field name="showInResultSetPane">
-                                    <Boolean>false</Boolean>
-                                </field>
-                                <field name="useXSLTInput">
-                                    <Boolean>false</Boolean>
-                                </field>
-                                <field name="xsltParams">
-                                    <list/>
-                                </field>
-                                <field name="cascadingStylesheets">
-                                    <String-array/>
-                                </field>
-                                <field name="xslTransformer">
-                                    <String>DITA-OT</String>
-                                </field>
-                                <field name="extensionURLs">
-                                    <String-array>
+                                        <String>${oxygenHome}/lib/xml-apis-ext.jar</String>
+                                        <String>${oxygenHome}/lib/avalon-framework*.jar</String>
+                                        <String>${oxygenHome}/lib/jeuclid-core.jar</String>
+                                        <String>${oxygenHome}/lib/jeuclid-fop.jar</String>
+                                        <String>${oxygenHome}/lib/jai_tiff.jar</String>
+                                        <String>${oxygenHome}/lib/jh.jar</String>
+                                        <String>${dita.dir.url}/lib/jsearch.jar</String>
+                                        <String>${oxygenHome}/lib/lucene*.jar</String>
+                                        <String>${dita.dir.url}</String>
+                                        <String>${dita.dir.url}/target/classes</String>
+                                        <String>${dita.dir.url}/lib/*dost-patches.jar</String>
+                                        <String>${dita.dir.url}/lib/</String>
+                                        <String>${dita.dir.url}/lib/*.jar</String>
                                         <String>${oxygenHome}/lib/poi-3.10-FINAL-20140208.jar</String>
-                                        <String>${oxygenHome}/lib/js.jar</String>
-                                        <String>${oxygenHome}/lib/nekohtml.jar</String>
                                     </String-array>
                                 </field>
                             </ditaScenario>
@@ -506,7 +357,7 @@
                                             <null/>
                                         </field>
                                         <field name="ditavalFilePath">
-                                            <String></String>
+                                            <null/>
                                         </field>
                                         <field name="simpleFiltersList">
                                             <list/>
@@ -514,12 +365,18 @@
                                     </ditavalFilters>
                                 </field>
                                 <field name="addOxygenJars">
-                                    <Boolean>true</Boolean>
+                                    <Boolean>false</Boolean>
                                 </field>
                                 <field name="skinCssFile">
                                     <null/>
                                 </field>
                                 <field name="lastCustomSkinCssPath">
+                                    <null/>
+                                </field>
+                                <field name="webhelpResponsiveTemplate">
+                                    <null/>
+                                </field>
+                                <field name="publishingTemplateDataPO">
                                     <null/>
                                 </field>
                                 <field name="additionalAntArgs">
@@ -544,7 +401,7 @@
                                                 <String>all</String>
                                             </field>
                                             <field name="defaultValue">
-                                                <String>all</String>
+                                                <null/>
                                             </field>
                                             <field name="type">
                                                 <Integer>4</Integer>
@@ -553,8 +410,17 @@
                                                 <String-array>
                                                     <String>none</String>
                                                     <String>all</String>
+                                                    <String>noparent</String>
                                                     <String>nofamily</String>
                                                     <null/>
+                                                </String-array>
+                                            </field>
+                                            <field name="possibleValuesDescriptions">
+                                                <String-array>
+                                                    <String>No links are included.</String>
+                                                    <String>All links are included.</String>
+                                                    <String>Parent links are not included.</String>
+                                                    <String>Parent, child, next, and previous links are not included.</String>
                                                 </String-array>
                                             </field>
                                         </ditaParameter>
@@ -579,6 +445,12 @@
                                                     <String>true</String>
                                                     <String>false</String>
                                                     <null/>
+                                                </String-array>
+                                            </field>
+                                            <field name="possibleValuesDescriptions">
+                                                <String-array>
+                                                    <String></String>
+                                                    <String></String>
                                                 </String-array>
                                             </field>
                                         </ditaParameter>
@@ -688,8 +560,328 @@
                                 </field>
                                 <field name="extensionURLs">
                                     <String-array>
+                                        <String>${dita.dir.url}/lib/commons-io*.jar</String>
+                                        <String>${dita.dir.url}/config/</String>
+                                        <String>${oxygenHome}/classes/</String>
+                                        <String>${oxygenHome}/lib/oxygen.jar</String>
+                                        <String>${oxygenHome}/lib/oxygenAuthor.jar</String>
+                                        <String>${oxygenHome}/lib/oxygenDeveloper.jar</String>
+                                        <String>${oxygenHome}/lib/oxygenEclipse.jar</String>
+                                        <String>${oxygenHome}/lib/oxygenAuthorEclipse.jar</String>
+                                        <String>${oxygenHome}/lib/oxygenDeveloperEclipse.jar</String>
+                                        <String>${oxygenHome}/lib/oxygen-webhelp-indexer.jar</String>
+                                        <String>${oxygenHome}/lib/oxygen-publishing-template.jar</String>
+                                        <String>${oxygenHome}/lib/oxygen-webhelp-xslt-extensions.jar</String>
+                                        <String>${oxygenHome}/lib/resolver.jar</String>
+                                        <String>${oxygenHome}/lib/oxygen-token-markers.jar</String>
+                                        <String>${oxygenHome}/lib/org.eclipse.wst.xml.xpath2.processor_*.jar</String>
+                                        <String>${oxygenHome}/lib/xml-apis.jar</String>
+                                        <String>${oxygenHome}/lib/xercesImpl.jar</String>
+                                        <String>${oxygenHome}/lib/commons-io*.jar</String>
+                                        <String>${oxygenHome}/lib/commons-logging*.jar</String>
+                                        <String>${oxygenHome}/lib/log4j.jar</String>
+                                        <String>${dita.dir.url}/lib/commons-codec*.jar</String>
+                                        <String>${oxygenHome}/lib/jing.jar</String>
+                                        <String>${oxygenHome}/lib/saxon9ee.jar</String>
+                                        <String>${oxygenHome}/lib/saxon.jar</String>
+                                        <String>${oxygenHome}/lib/xmlgraphics-commons*.jar</String>
+                                        <String>${oxygenHome}/lib/fop.jar</String>
+                                        <String>${oxygenHome}/lib/fontbox-*.jar</String>
+                                        <String>${oxygenHome}/lib/batik-all*.jar</String>
                                         <String>${oxygenHome}/lib/js.jar</String>
+                                        <String>${oxygenHome}/lib/poi*.jar</String>
                                         <String>${oxygenHome}/lib/nekohtml.jar</String>
+                                        <String>${oxygenHome}/lib/xml-apis-ext.jar</String>
+                                        <String>${oxygenHome}/lib/avalon-framework*.jar</String>
+                                        <String>${oxygenHome}/lib/jeuclid-core.jar</String>
+                                        <String>${oxygenHome}/lib/jeuclid-fop.jar</String>
+                                        <String>${oxygenHome}/lib/jai_tiff.jar</String>
+                                        <String>${oxygenHome}/lib/jh.jar</String>
+                                        <String>${dita.dir.url}/lib/jsearch.jar</String>
+                                        <String>${oxygenHome}/lib/lucene*.jar</String>
+                                        <String>${dita.dir.url}</String>
+                                        <String>${dita.dir.url}/target/classes</String>
+                                        <String>${dita.dir.url}/lib/*dost-patches.jar</String>
+                                        <String>${dita.dir.url}/lib/</String>
+                                        <String>${dita.dir.url}/lib/*.jar</String>
+                                        <String>${oxygenHome}/lib/poi-3.10-FINAL-20140208.jar</String>
+                                    </String-array>
+                                </field>
+                            </ditaScenario>
+                            <ditaScenario>
+                                <field name="useXEP">
+                                    <Boolean>false</Boolean>
+                                </field>
+                                <field name="useAntennaHouse">
+                                    <Boolean>false</Boolean>
+                                </field>
+                                <field name="baseDir">
+                                    <String>${cfd}</String>
+                                </field>
+                                <field name="outputDir">
+                                    <String>${cfd}/out/webhelp</String>
+                                </field>
+                                <field name="tempDir">
+                                    <String>${cfd}/temp/webhelp</String>
+                                </field>
+                                <field name="transtype">
+                                    <String>webhelp</String>
+                                </field>
+                                <field name="filters">
+                                    <ditavalFilters>
+                                        <field name="useDitavalFilePath">
+                                            <Boolean>false</Boolean>
+                                        </field>
+                                        <field name="useAppliedConditionSet">
+                                            <Boolean>true</Boolean>
+                                        </field>
+                                        <field name="appliedConditionSet">
+                                            <null/>
+                                        </field>
+                                        <field name="ditavalFilePath">
+                                            <null/>
+                                        </field>
+                                        <field name="simpleFiltersList">
+                                            <list/>
+                                        </field>
+                                    </ditavalFilters>
+                                </field>
+                                <field name="addOxygenJars">
+                                    <Boolean>false</Boolean>
+                                </field>
+                                <field name="skinCssFile">
+                                    <null/>
+                                </field>
+                                <field name="lastCustomSkinCssPath">
+                                    <null/>
+                                </field>
+                                <field name="webhelpResponsiveTemplate">
+                                    <null/>
+                                </field>
+                                <field name="publishingTemplateDataPO">
+                                    <null/>
+                                </field>
+                                <field name="additionalAntArgs">
+                                    <String></String>
+                                </field>
+                                <field name="buildTarget">
+                                    <String></String>
+                                </field>
+                                <field name="buildFilePath">
+                                    <String></String>
+                                </field>
+                                <field name="ditaParams">
+                                    <list>
+                                        <ditaParameter>
+                                            <field name="name">
+                                                <String>args.xhtml.classattr</String>
+                                            </field>
+                                            <field name="description">
+                                                <null/>
+                                            </field>
+                                            <field name="value">
+                                                <String>yes</String>
+                                            </field>
+                                            <field name="defaultValue">
+                                                <String>yes</String>
+                                            </field>
+                                            <field name="type">
+                                                <Integer>4</Integer>
+                                            </field>
+                                            <field name="possibleValues">
+                                                <String-array>
+                                                    <String>yes</String>
+                                                    <String>no</String>
+                                                    <null/>
+                                                </String-array>
+                                            </field>
+                                            <field name="possibleValuesDescriptions">
+                                                <String-array>
+                                                    <String></String>
+                                                    <String></String>
+                                                </String-array>
+                                            </field>
+                                        </ditaParameter>
+                                        <ditaParameter>
+                                            <field name="name">
+                                                <String>fix.external.refs.com.oxygenxml</String>
+                                            </field>
+                                            <field name="description">
+                                                <null/>
+                                            </field>
+                                            <field name="value">
+                                                <String>true</String>
+                                            </field>
+                                            <field name="defaultValue">
+                                                <String>false</String>
+                                            </field>
+                                            <field name="type">
+                                                <Integer>4</Integer>
+                                            </field>
+                                            <field name="possibleValues">
+                                                <String-array>
+                                                    <String>true</String>
+                                                    <String>false</String>
+                                                    <null/>
+                                                </String-array>
+                                            </field>
+                                            <field name="possibleValuesDescriptions">
+                                                <String-array>
+                                                    <String></String>
+                                                    <String></String>
+                                                </String-array>
+                                            </field>
+                                        </ditaParameter>
+                                    </list>
+                                </field>
+                                <field name="jvmArgs">
+                                    <String>-Xmx384m -Dcom.oxygenxml.allow.external.scripts=true</String>
+                                </field>
+                                <field name="useCustomJavaHome">
+                                    <Boolean>false</Boolean>
+                                </field>
+                                <field name="customJavaHomeDir">
+                                    <String></String>
+                                </field>
+                                <field name="useCustomANTHome">
+                                    <Boolean>false</Boolean>
+                                </field>
+                                <field name="customANTHomeDir">
+                                    <String></String>
+                                </field>
+                                <field name="workingDir">
+                                    <null/>
+                                </field>
+                                <field name="showConsoleAlways">
+                                    <Boolean>true</Boolean>
+                                </field>
+                                <field name="advancedOptionsMap">
+                                    <null/>
+                                </field>
+                                <field name="name">
+                                    <String>WebHelp (convert)</String>
+                                </field>
+                                <field name="baseURL">
+                                    <null/>
+                                </field>
+                                <field name="footerURL">
+                                    <null/>
+                                </field>
+                                <field name="fOPMethod">
+                                    <null/>
+                                </field>
+                                <field name="fOProcessorName">
+                                    <null/>
+                                </field>
+                                <field name="headerURL">
+                                    <null/>
+                                </field>
+                                <field name="inputXSLURL">
+                                    <null/>
+                                </field>
+                                <field name="inputXMLURL">
+                                    <null/>
+                                </field>
+                                <field name="defaultScenario">
+                                    <Boolean>false</Boolean>
+                                </field>
+                                <field name="isFOPPerforming">
+                                    <Boolean>false</Boolean>
+                                </field>
+                                <field name="type">
+                                    <String>DITAMAP</String>
+                                </field>
+                                <field name="saveAs">
+                                    <Boolean>true</Boolean>
+                                </field>
+                                <field name="openInBrowser">
+                                    <Boolean>true</Boolean>
+                                </field>
+                                <field name="outputFile">
+                                    <null/>
+                                </field>
+                                <field name="outputResource">
+                                    <null/>
+                                </field>
+                                <field name="openOtherLocationInBrowser">
+                                    <Boolean>false</Boolean>
+                                </field>
+                                <field name="locationToOpenInBrowserURL">
+                                    <String></String>
+                                </field>
+                                <field name="openInEditor">
+                                    <Boolean>false</Boolean>
+                                </field>
+                                <field name="showInHTMLPane">
+                                    <Boolean>false</Boolean>
+                                </field>
+                                <field name="showInXMLPane">
+                                    <Boolean>false</Boolean>
+                                </field>
+                                <field name="showInSVGPane">
+                                    <Boolean>false</Boolean>
+                                </field>
+                                <field name="showInResultSetPane">
+                                    <Boolean>false</Boolean>
+                                </field>
+                                <field name="useXSLTInput">
+                                    <Boolean>false</Boolean>
+                                </field>
+                                <field name="xsltParams">
+                                    <list/>
+                                </field>
+                                <field name="cascadingStylesheets">
+                                    <String-array/>
+                                </field>
+                                <field name="xslTransformer">
+                                    <String>DITA-OT</String>
+                                </field>
+                                <field name="extensionURLs">
+                                    <String-array>
+                                        <String>${dita.dir.url}/lib/commons-io*.jar</String>
+                                        <String>${dita.dir.url}/config/</String>
+                                        <String>${oxygenHome}/classes/</String>
+                                        <String>${oxygenHome}/lib/oxygen.jar</String>
+                                        <String>${oxygenHome}/lib/oxygenAuthor.jar</String>
+                                        <String>${oxygenHome}/lib/oxygenDeveloper.jar</String>
+                                        <String>${oxygenHome}/lib/oxygenEclipse.jar</String>
+                                        <String>${oxygenHome}/lib/oxygenAuthorEclipse.jar</String>
+                                        <String>${oxygenHome}/lib/oxygenDeveloperEclipse.jar</String>
+                                        <String>${oxygenHome}/lib/oxygen-webhelp-indexer.jar</String>
+                                        <String>${oxygenHome}/lib/oxygen-publishing-template.jar</String>
+                                        <String>${oxygenHome}/lib/oxygen-webhelp-xslt-extensions.jar</String>
+                                        <String>${oxygenHome}/lib/resolver.jar</String>
+                                        <String>${oxygenHome}/lib/oxygen-token-markers.jar</String>
+                                        <String>${oxygenHome}/lib/org.eclipse.wst.xml.xpath2.processor_*.jar</String>
+                                        <String>${oxygenHome}/lib/xml-apis.jar</String>
+                                        <String>${oxygenHome}/lib/xercesImpl.jar</String>
+                                        <String>${oxygenHome}/lib/commons-io*.jar</String>
+                                        <String>${oxygenHome}/lib/commons-logging*.jar</String>
+                                        <String>${oxygenHome}/lib/log4j.jar</String>
+                                        <String>${dita.dir.url}/lib/commons-codec*.jar</String>
+                                        <String>${oxygenHome}/lib/jing.jar</String>
+                                        <String>${oxygenHome}/lib/saxon9ee.jar</String>
+                                        <String>${oxygenHome}/lib/saxon.jar</String>
+                                        <String>${oxygenHome}/lib/xmlgraphics-commons*.jar</String>
+                                        <String>${oxygenHome}/lib/fop.jar</String>
+                                        <String>${oxygenHome}/lib/fontbox-*.jar</String>
+                                        <String>${oxygenHome}/lib/batik-all*.jar</String>
+                                        <String>${oxygenHome}/lib/js.jar</String>
+                                        <String>${oxygenHome}/lib/poi*.jar</String>
+                                        <String>${oxygenHome}/lib/nekohtml.jar</String>
+                                        <String>${oxygenHome}/lib/xml-apis-ext.jar</String>
+                                        <String>${oxygenHome}/lib/avalon-framework*.jar</String>
+                                        <String>${oxygenHome}/lib/jeuclid-core.jar</String>
+                                        <String>${oxygenHome}/lib/jeuclid-fop.jar</String>
+                                        <String>${oxygenHome}/lib/jai_tiff.jar</String>
+                                        <String>${oxygenHome}/lib/jh.jar</String>
+                                        <String>${dita.dir.url}/lib/jsearch.jar</String>
+                                        <String>${oxygenHome}/lib/lucene*.jar</String>
+                                        <String>${dita.dir.url}</String>
+                                        <String>${dita.dir.url}/target/classes</String>
+                                        <String>${dita.dir.url}/lib/*dost-patches.jar</String>
+                                        <String>${dita.dir.url}/lib/</String>
+                                        <String>${dita.dir.url}/lib/*.jar</String>
                                         <String>${oxygenHome}/lib/poi-3.10-FINAL-20140208.jar</String>
                                     </String-array>
                                 </field>
