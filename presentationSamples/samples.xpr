@@ -315,6 +315,7 @@
                                         <String>${oxygenHome}/lib/jeuclid-fop.jar</String>
                                         <String>${oxygenHome}/lib/jai_tiff.jar</String>
                                         <String>${oxygenHome}/lib/jh.jar</String>
+                                        <String>${oxygenHome}/lib/oxygen-basic-utilities.jar</String>
                                         <String>${dita.dir.url}/lib/jsearch.jar</String>
                                         <String>${oxygenHome}/lib/lucene*.jar</String>
                                         <String>${dita.dir.url}</String>
@@ -323,6 +324,7 @@
                                         <String>${dita.dir.url}/lib/</String>
                                         <String>${dita.dir.url}/lib/*.jar</String>
                                         <String>${oxygenHome}/lib/poi-3.10-FINAL-20140208.jar</String>
+                                        <String>${oxygenHome}/lib/*json*.jar</String>
                                     </String-array>
                                 </field>
                             </ditaScenario>
@@ -597,6 +599,8 @@
                                         <String>${oxygenHome}/lib/jeuclid-fop.jar</String>
                                         <String>${oxygenHome}/lib/jai_tiff.jar</String>
                                         <String>${oxygenHome}/lib/jh.jar</String>
+                                        <String>${oxygenHome}/lib/oxygen-basic-utilities.jar</String>
+                                        <String>${oxygenHome}/lib/*json*.jar</String>
                                         <String>${dita.dir.url}/lib/jsearch.jar</String>
                                         <String>${oxygenHome}/lib/lucene*.jar</String>
                                         <String>${dita.dir.url}</String>
@@ -875,6 +879,8 @@
                                         <String>${oxygenHome}/lib/jeuclid-fop.jar</String>
                                         <String>${oxygenHome}/lib/jai_tiff.jar</String>
                                         <String>${oxygenHome}/lib/jh.jar</String>
+                                        <String>${oxygenHome}/lib/oxygen-basic-utilities.jar</String>
+                                        <String>${oxygenHome}/lib/*json*.jar</String>
                                         <String>${dita.dir.url}/lib/jsearch.jar</String>
                                         <String>${oxygenHome}/lib/lucene*.jar</String>
                                         <String>${dita.dir.url}</String>
@@ -883,6 +889,7 @@
                                         <String>${dita.dir.url}/lib/</String>
                                         <String>${dita.dir.url}/lib/*.jar</String>
                                         <String>${oxygenHome}/lib/poi-3.10-FINAL-20140208.jar</String>
+                                        <String>${oxygenHome}/lib/json.jar</String>
                                     </String-array>
                                 </field>
                             </ditaScenario>
