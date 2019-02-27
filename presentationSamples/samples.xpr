@@ -316,6 +316,7 @@
                                         <String>${oxygenHome}/lib/*jai_tiff*.jar</String>
                                         <String>${oxygenHome}/lib/jh.jar</String>
                                         <String>${oxygenHome}/lib/oxygen-basic-utilities.jar</String>
+                                        <String>${oxygenHome}/lib/oxygen-license.jar</String>
                                         <String>${oxygenHome}/lib/*sandbox.jar</String>
                                         <String>${dita.dir.url}/lib/jsearch.jar</String>
                                         <String>${oxygenHome}/lib/lucene*.jar</String>
@@ -601,6 +602,7 @@
                                         <String>${oxygenHome}/lib/*jai_tiff*.jar</String>
                                         <String>${oxygenHome}/lib/jh.jar</String>
                                         <String>${oxygenHome}/lib/oxygen-basic-utilities.jar</String>
+                                        <String>${oxygenHome}/lib/oxygen-license.jar</String>
                                         <String>${oxygenHome}/lib/*sandbox.jar</String>
                                         <String>${oxygenHome}/lib/*json*.jar</String>
                                         <String>${dita.dir.url}/lib/jsearch.jar</String>
@@ -882,6 +884,7 @@
                                         <String>${oxygenHome}/lib/*jai_tiff*.jar</String>
                                         <String>${oxygenHome}/lib/jh.jar</String>
                                         <String>${oxygenHome}/lib/oxygen-basic-utilities.jar</String>
+                                        <String>${oxygenHome}/lib/oxygen-license.jar</String>
                                         <String>${oxygenHome}/lib/*sandbox.jar</String>
                                         <String>${oxygenHome}/lib/*json*.jar</String>
                                         <String>${dita.dir.url}/lib/jsearch.jar</String>
