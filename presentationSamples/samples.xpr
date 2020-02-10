@@ -297,7 +297,7 @@
                                         <String>${oxygenHome}/lib/*xerces*.jar</String>
                                         <String>${oxygenHome}/lib/*commons-io*.jar</String>
                                         <String>${oxygenHome}/lib/*commons-logging*.jar</String>
-                                        <String>${oxygenHome}/lib/log4j.jar</String>
+                                        <String>${oxygenHome}/lib/*log4j*.jar</String>
                                         <String>${dita.dir.url}/lib/commons-codec*.jar</String>
                                         <String>${oxygenHome}/lib/*jing.jar</String>
                                         <String>${oxygenHome}/lib/*saxon*9*.jar</String>
@@ -583,7 +583,7 @@
                                         <String>${oxygenHome}/lib/*xerces*.jar</String>
                                         <String>${oxygenHome}/lib/*commons-io*.jar</String>
                                         <String>${oxygenHome}/lib/*commons-logging*.jar</String>
-                                        <String>${oxygenHome}/lib/log4j.jar</String>
+                                        <String>${oxygenHome}/lib/*log4j*.jar</String>
                                         <String>${dita.dir.url}/lib/*commons-codec*.jar</String>
                                         <String>${oxygenHome}/lib/*jing.jar</String>
                                         <String>${oxygenHome}/lib/*saxon*9*.jar</String>
@@ -865,7 +865,7 @@
                                         <String>${oxygenHome}/lib/*xerces*.jar</String>
                                         <String>${oxygenHome}/lib/*commons-io*.jar</String>
                                         <String>${oxygenHome}/lib/commons-logging*.jar</String>
-                                        <String>${oxygenHome}/lib/log4j.jar</String>
+                                        <String>${oxygenHome}/lib/*log4j*.jar</String>
                                         <String>${dita.dir.url}/lib/*commons-codec*.jar</String>
                                         <String>${oxygenHome}/lib/*jing.jar</String>
                                         <String>${oxygenHome}/lib/*saxon*9*.jar</String>
