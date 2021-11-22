@@ -300,6 +300,7 @@
                                         <String>${oxygenHome}/lib/*log4j*.jar</String>
                                         <String>${dita.dir.url}/lib/commons-codec*.jar</String>
                                         <String>${oxygenHome}/lib/*jing.jar</String>
+                                        <String>${oxygenHome}/lib/*saxon*10*.jar</String>
                                         <String>${oxygenHome}/lib/*saxon*9*.jar</String>
                                         <String>${oxygenHome}/lib/*saxon*.jar</String>
                                         <String>${oxygenHome}/lib/*xmlgraphics*.jar</String>
@@ -586,6 +587,7 @@
                                         <String>${oxygenHome}/lib/*log4j*.jar</String>
                                         <String>${dita.dir.url}/lib/*commons-codec*.jar</String>
                                         <String>${oxygenHome}/lib/*jing.jar</String>
+                                        <String>${oxygenHome}/lib/*saxon*10*.jar</String>
                                         <String>${oxygenHome}/lib/*saxon*9*.jar</String>
                                         <String>${oxygenHome}/lib/*saxon*.jar</String>
                                         <String>${oxygenHome}/lib/*xmlgraphics*.jar</String>
@@ -868,6 +870,7 @@
                                         <String>${oxygenHome}/lib/*log4j*.jar</String>
                                         <String>${dita.dir.url}/lib/*commons-codec*.jar</String>
                                         <String>${oxygenHome}/lib/*jing.jar</String>
+                                        <String>${oxygenHome}/lib/*saxon*10*.jar</String>
                                         <String>${oxygenHome}/lib/*saxon*9*.jar</String>
                                         <String>${oxygenHome}/lib/*saxon*.jar</String>
                                         <String>${oxygenHome}/lib/*xmlgraphics*.jar</String>
