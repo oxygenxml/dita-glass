@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project version="21.0">
+<project>
     <meta>
         <filters directoryPatterns="" filePatterns="" positiveFilePatterns="" showHiddenFiles="false"/>
         <options>
-            <serialized version="21.0" xml:space="preserve">
+            <serialized xml:space="preserve">
                 <serializableOrderedMap>
                     <entry>
                         <String>additional.frameworks.directories</String>
@@ -34,12 +34,17 @@
                                 </field>
                                 <field name="scenarioIds">
                                     <list>
-                                        <String>WebHelp (convert)</String>
+                                        <String>EPUB (convert)</String>
                                     </list>
                                 </field>
                                 <field name="scenarioTypes">
                                     <list>
                                         <String>DITAMAP</String>
+                                    </list>
+                                </field>
+                                <field name="scenarioStorageLocations">
+                                    <list>
+                                        <Byte>2</Byte>
                                     </list>
                                 </field>
                             </scenarioAssociation>
@@ -57,6 +62,11 @@
                                         <String>DITAMAP</String>
                                     </list>
                                 </field>
+                                <field name="scenarioStorageLocations">
+                                    <list>
+                                        <Byte>2</Byte>
+                                    </list>
+                                </field>
                             </scenarioAssociation>
                             <scenarioAssociation>
                                 <field name="url">
@@ -72,6 +82,11 @@
                                         <String>DITAMAP</String>
                                     </list>
                                 </field>
+                                <field name="scenarioStorageLocations">
+                                    <list>
+                                        <Byte>2</Byte>
+                                    </list>
+                                </field>
                             </scenarioAssociation>
                         </scenarioAssociation-array>
                     </entry>
@@ -83,6 +98,9 @@
                                     <Boolean>false</Boolean>
                                 </field>
                                 <field name="useAntennaHouse">
+                                    <Boolean>false</Boolean>
+                                </field>
+                                <field name="useDITAScript">
                                     <Boolean>false</Boolean>
                                 </field>
                                 <field name="baseDir">
@@ -117,7 +135,7 @@
                                     </ditavalFilters>
                                 </field>
                                 <field name="addOxygenJars">
-                                    <Boolean>false</Boolean>
+                                    <Boolean>true</Boolean>
                                 </field>
                                 <field name="skinCssFile">
                                     <null/>
@@ -129,6 +147,9 @@
                                     <null/>
                                 </field>
                                 <field name="publishingTemplateDataPO">
+                                    <null/>
+                                </field>
+                                <field name="oxygenFeedbackPO">
                                     <null/>
                                 </field>
                                 <field name="additionalAntArgs">
@@ -237,9 +258,6 @@
                                 <field name="openInBrowser">
                                     <Boolean>true</Boolean>
                                 </field>
-                                <field name="outputFile">
-                                    <null/>
-                                </field>
                                 <field name="outputResource">
                                     <null/>
                                 </field>
@@ -278,54 +296,6 @@
                                 </field>
                                 <field name="extensionURLs">
                                     <String-array>
-                                        <String>${dita.dir.url}/lib/commons-io*.jar</String>
-                                        <String>${dita.dir.url}/config/</String>
-                                        <String>${oxygenHome}/classes/</String>
-                                        <String>${oxygenHome}/lib/oxygen.jar</String>
-                                        <String>${oxygenHome}/lib/oxygenAuthor.jar</String>
-                                        <String>${oxygenHome}/lib/oxygenDeveloper.jar</String>
-                                        <String>${oxygenHome}/lib/oxygenEclipse.jar</String>
-                                        <String>${oxygenHome}/lib/oxygenAuthorEclipse.jar</String>
-                                        <String>${oxygenHome}/lib/oxygenDeveloperEclipse.jar</String>
-                                        <String>${oxygenHome}/lib/oxygen-webhelp-indexer.jar</String>
-                                        <String>${oxygenHome}/lib/oxygen-publishing-template.jar</String>
-                                        <String>${oxygenHome}/lib/oxygen-webhelp-xslt-extensions.jar</String>
-                                        <String>${oxygenHome}/lib/*resolver*.jar</String>
-                                        <String>${oxygenHome}/lib/oxygen-token-markers.jar</String>
-                                        <String>${oxygenHome}/lib/org.eclipse.wst.xml.xpath2.processor_*.jar</String>
-                                        <String>${oxygenHome}/lib/xml-apis.jar</String>
-                                        <String>${oxygenHome}/lib/*xerces*.jar</String>
-                                        <String>${oxygenHome}/lib/*commons-io*.jar</String>
-                                        <String>${oxygenHome}/lib/*commons-logging*.jar</String>
-                                        <String>${oxygenHome}/lib/*log4j*.jar</String>
-                                        <String>${dita.dir.url}/lib/commons-codec*.jar</String>
-                                        <String>${oxygenHome}/lib/*jing.jar</String>
-                                        <String>${oxygenHome}/lib/*saxon*10*.jar</String>
-                                        <String>${oxygenHome}/lib/*saxon*9*.jar</String>
-                                        <String>${oxygenHome}/lib/*saxon*.jar</String>
-                                        <String>${oxygenHome}/lib/*xmlgraphics*.jar</String>
-                                        <String>${oxygenHome}/lib/*fop.jar</String>
-                                        <String>${oxygenHome}/lib/fontbox-*.jar</String>
-                                        <String>${oxygenHome}/lib/*batik*.jar</String>
-                                        <String>${oxygenHome}/lib/js.jar</String>
-                                        <String>${oxygenHome}/lib/poi*.jar</String>
-                                        <String>${oxygenHome}/lib/nekohtml.jar</String>
-                                        <String>${oxygenHome}/lib/xml-apis-ext.jar</String>
-                                        <String>${oxygenHome}/lib/avalon-framework*.jar</String>
-                                        <String>${oxygenHome}/lib/*jeuclid-core.jar</String>
-                                        <String>${oxygenHome}/lib/*jeuclid-fop.jar</String>
-                                        <String>${oxygenHome}/lib/*jai_tiff*.jar</String>
-                                        <String>${oxygenHome}/lib/jh.jar</String>
-                                        <String>${oxygenHome}/lib/oxygen-basic-utilities.jar</String>
-                                        <String>${oxygenHome}/lib/oxygen-license.jar</String>
-                                        <String>${oxygenHome}/lib/*sandbox.jar</String>
-                                        <String>${dita.dir.url}/lib/jsearch.jar</String>
-                                        <String>${oxygenHome}/lib/lucene*.jar</String>
-                                        <String>${dita.dir.url}</String>
-                                        <String>${dita.dir.url}/target/classes</String>
-                                        <String>${dita.dir.url}/lib/*dost-patches.jar</String>
-                                        <String>${dita.dir.url}/lib/</String>
-                                        <String>${dita.dir.url}/lib/*.jar</String>
                                         <String>${oxygenHome}/lib/poi-3.10-FINAL-20140208.jar</String>
                                         <String>${oxygenHome}/lib/*json*.jar</String>
                                     </String-array>
@@ -336,6 +306,9 @@
                                     <Boolean>false</Boolean>
                                 </field>
                                 <field name="useAntennaHouse">
+                                    <Boolean>false</Boolean>
+                                </field>
+                                <field name="useDITAScript">
                                     <Boolean>false</Boolean>
                                 </field>
                                 <field name="baseDir">
@@ -370,7 +343,7 @@
                                     </ditavalFilters>
                                 </field>
                                 <field name="addOxygenJars">
-                                    <Boolean>false</Boolean>
+                                    <Boolean>true</Boolean>
                                 </field>
                                 <field name="skinCssFile">
                                     <null/>
@@ -382,6 +355,9 @@
                                     <null/>
                                 </field>
                                 <field name="publishingTemplateDataPO">
+                                    <null/>
+                                </field>
+                                <field name="oxygenFeedbackPO">
                                     <null/>
                                 </field>
                                 <field name="additionalAntArgs">
@@ -524,9 +500,6 @@
                                 <field name="openInBrowser">
                                     <Boolean>true</Boolean>
                                 </field>
-                                <field name="outputFile">
-                                    <null/>
-                                </field>
                                 <field name="outputResource">
                                     <null/>
                                 </field>
@@ -565,55 +538,7 @@
                                 </field>
                                 <field name="extensionURLs">
                                     <String-array>
-                                        <String>${dita.dir.url}/lib/*commons-io*.jar</String>
-                                        <String>${dita.dir.url}/config/</String>
-                                        <String>${oxygenHome}/classes/</String>
-                                        <String>${oxygenHome}/lib/oxygen.jar</String>
-                                        <String>${oxygenHome}/lib/oxygenAuthor.jar</String>
-                                        <String>${oxygenHome}/lib/oxygenDeveloper.jar</String>
-                                        <String>${oxygenHome}/lib/oxygenEclipse.jar</String>
-                                        <String>${oxygenHome}/lib/oxygenAuthorEclipse.jar</String>
-                                        <String>${oxygenHome}/lib/oxygenDeveloperEclipse.jar</String>
-                                        <String>${oxygenHome}/lib/oxygen-webhelp-indexer.jar</String>
-                                        <String>${oxygenHome}/lib/oxygen-publishing-template.jar</String>
-                                        <String>${oxygenHome}/lib/oxygen-webhelp-xslt-extensions.jar</String>
-                                        <String>${oxygenHome}/lib/*resolver*.jar</String>
-                                        <String>${oxygenHome}/lib/oxygen-token-markers.jar</String>
-                                        <String>${oxygenHome}/lib/org.eclipse.wst.xml.xpath2.processor_*.jar</String>
-                                        <String>${oxygenHome}/lib/xml-apis.jar</String>
-                                        <String>${oxygenHome}/lib/*xerces*.jar</String>
-                                        <String>${oxygenHome}/lib/*commons-io*.jar</String>
-                                        <String>${oxygenHome}/lib/*commons-logging*.jar</String>
-                                        <String>${oxygenHome}/lib/*log4j*.jar</String>
-                                        <String>${dita.dir.url}/lib/*commons-codec*.jar</String>
-                                        <String>${oxygenHome}/lib/*jing.jar</String>
-                                        <String>${oxygenHome}/lib/*saxon*10*.jar</String>
-                                        <String>${oxygenHome}/lib/*saxon*9*.jar</String>
-                                        <String>${oxygenHome}/lib/*saxon*.jar</String>
-                                        <String>${oxygenHome}/lib/*xmlgraphics*.jar</String>
-                                        <String>${oxygenHome}/lib/*fop.jar</String>
-                                        <String>${oxygenHome}/lib/fontbox-*.jar</String>
-                                        <String>${oxygenHome}/lib/*batik*.jar</String>
-                                        <String>${oxygenHome}/lib/js.jar</String>
-                                        <String>${oxygenHome}/lib/poi*.jar</String>
-                                        <String>${oxygenHome}/lib/nekohtml.jar</String>
-                                        <String>${oxygenHome}/lib/xml-apis-ext.jar</String>
-                                        <String>${oxygenHome}/lib/avalon-framework*.jar</String>
-                                        <String>${oxygenHome}/lib/*jeuclid-core.jar</String>
-                                        <String>${oxygenHome}/lib/*jeuclid-fop.jar</String>
-                                        <String>${oxygenHome}/lib/*jai_tiff*.jar</String>
-                                        <String>${oxygenHome}/lib/jh.jar</String>
-                                        <String>${oxygenHome}/lib/oxygen-basic-utilities.jar</String>
-                                        <String>${oxygenHome}/lib/oxygen-license.jar</String>
-                                        <String>${oxygenHome}/lib/*sandbox.jar</String>
-                                        <String>${oxygenHome}/lib/*json*.jar</String>
-                                        <String>${dita.dir.url}/lib/jsearch.jar</String>
-                                        <String>${oxygenHome}/lib/lucene*.jar</String>
-                                        <String>${dita.dir.url}</String>
-                                        <String>${dita.dir.url}/target/classes</String>
-                                        <String>${dita.dir.url}/lib/*dost-patches.jar</String>
-                                        <String>${dita.dir.url}/lib/</String>
-                                        <String>${dita.dir.url}/lib/*.jar</String>
+                                        <String>${oxygenHome}/lib/json.jar</String>
                                         <String>${oxygenHome}/lib/poi-3.10-FINAL-20140208.jar</String>
                                     </String-array>
                                 </field>
@@ -623,6 +548,9 @@
                                     <Boolean>false</Boolean>
                                 </field>
                                 <field name="useAntennaHouse">
+                                    <Boolean>false</Boolean>
+                                </field>
+                                <field name="useDITAScript">
                                     <Boolean>false</Boolean>
                                 </field>
                                 <field name="baseDir">
@@ -635,7 +563,7 @@
                                     <String>${cfd}/temp/webhelp</String>
                                 </field>
                                 <field name="transtype">
-                                    <String>webhelp</String>
+                                    <String>webhelp-responsive</String>
                                 </field>
                                 <field name="filters">
                                     <ditavalFilters>
@@ -657,7 +585,7 @@
                                     </ditavalFilters>
                                 </field>
                                 <field name="addOxygenJars">
-                                    <Boolean>false</Boolean>
+                                    <Boolean>true</Boolean>
                                 </field>
                                 <field name="skinCssFile">
                                     <null/>
@@ -669,6 +597,19 @@
                                     <null/>
                                 </field>
                                 <field name="publishingTemplateDataPO">
+                                    <publishingTemplate>
+                                        <field name="templateRoot">
+                                            <String>${configured.ditaot.dir}/plugins/com.oxygenxml.webhelp.responsive/templates/aquamarine</String>
+                                        </field>
+                                        <field name="descriptorRelativePath">
+                                            <String>aquamarine-tree.opt</String>
+                                        </field>
+                                        <field name="isCustomTemplate">
+                                            <Boolean>false</Boolean>
+                                        </field>
+                                    </publishingTemplate>
+                                </field>
+                                <field name="oxygenFeedbackPO">
                                     <null/>
                                 </field>
                                 <field name="additionalAntArgs">
@@ -682,36 +623,6 @@
                                 </field>
                                 <field name="ditaParams">
                                     <list>
-                                        <ditaParameter>
-                                            <field name="name">
-                                                <String>args.xhtml.classattr</String>
-                                            </field>
-                                            <field name="description">
-                                                <null/>
-                                            </field>
-                                            <field name="value">
-                                                <String>yes</String>
-                                            </field>
-                                            <field name="defaultValue">
-                                                <String>yes</String>
-                                            </field>
-                                            <field name="type">
-                                                <Integer>4</Integer>
-                                            </field>
-                                            <field name="possibleValues">
-                                                <String-array>
-                                                    <String>yes</String>
-                                                    <String>no</String>
-                                                    <null/>
-                                                </String-array>
-                                            </field>
-                                            <field name="possibleValuesDescriptions">
-                                                <String-array>
-                                                    <String></String>
-                                                    <String></String>
-                                                </String-array>
-                                            </field>
-                                        </ditaParameter>
                                         <ditaParameter>
                                             <field name="name">
                                                 <String>fix.external.refs.com.oxygenxml</String>
@@ -732,6 +643,36 @@
                                                 <String-array>
                                                     <String>true</String>
                                                     <String>false</String>
+                                                    <null/>
+                                                </String-array>
+                                            </field>
+                                            <field name="possibleValuesDescriptions">
+                                                <String-array>
+                                                    <String></String>
+                                                    <String></String>
+                                                </String-array>
+                                            </field>
+                                        </ditaParameter>
+                                        <ditaParameter>
+                                            <field name="name">
+                                                <String>args.xhtml.classattr</String>
+                                            </field>
+                                            <field name="description">
+                                                <null/>
+                                            </field>
+                                            <field name="value">
+                                                <String>yes</String>
+                                            </field>
+                                            <field name="defaultValue">
+                                                <String>yes</String>
+                                            </field>
+                                            <field name="type">
+                                                <Integer>4</Integer>
+                                            </field>
+                                            <field name="possibleValues">
+                                                <String-array>
+                                                    <String>yes</String>
+                                                    <String>no</String>
                                                     <null/>
                                                 </String-array>
                                             </field>
@@ -807,9 +748,6 @@
                                 <field name="openInBrowser">
                                     <Boolean>true</Boolean>
                                 </field>
-                                <field name="outputFile">
-                                    <null/>
-                                </field>
                                 <field name="outputResource">
                                     <null/>
                                 </field>
@@ -848,55 +786,6 @@
                                 </field>
                                 <field name="extensionURLs">
                                     <String-array>
-                                        <String>${dita.dir.url}/lib/*commons-io*.jar</String>
-                                        <String>${dita.dir.url}/config/</String>
-                                        <String>${oxygenHome}/classes/</String>
-                                        <String>${oxygenHome}/lib/oxygen.jar</String>
-                                        <String>${oxygenHome}/lib/oxygenAuthor.jar</String>
-                                        <String>${oxygenHome}/lib/oxygenDeveloper.jar</String>
-                                        <String>${oxygenHome}/lib/oxygenEclipse.jar</String>
-                                        <String>${oxygenHome}/lib/oxygenAuthorEclipse.jar</String>
-                                        <String>${oxygenHome}/lib/oxygenDeveloperEclipse.jar</String>
-                                        <String>${oxygenHome}/lib/oxygen-webhelp-indexer.jar</String>
-                                        <String>${oxygenHome}/lib/oxygen-publishing-template.jar</String>
-                                        <String>${oxygenHome}/lib/oxygen-webhelp-xslt-extensions.jar</String>
-                                        <String>${oxygenHome}/lib/*resolver*.jar</String>
-                                        <String>${oxygenHome}/lib/oxygen-token-markers.jar</String>
-                                        <String>${oxygenHome}/lib/org.eclipse.wst.xml.xpath2.processor_*.jar</String>
-                                        <String>${oxygenHome}/lib/xml-apis.jar</String>
-                                        <String>${oxygenHome}/lib/*xerces*.jar</String>
-                                        <String>${oxygenHome}/lib/*commons-io*.jar</String>
-                                        <String>${oxygenHome}/lib/commons-logging*.jar</String>
-                                        <String>${oxygenHome}/lib/*log4j*.jar</String>
-                                        <String>${dita.dir.url}/lib/*commons-codec*.jar</String>
-                                        <String>${oxygenHome}/lib/*jing.jar</String>
-                                        <String>${oxygenHome}/lib/*saxon*10*.jar</String>
-                                        <String>${oxygenHome}/lib/*saxon*9*.jar</String>
-                                        <String>${oxygenHome}/lib/*saxon*.jar</String>
-                                        <String>${oxygenHome}/lib/*xmlgraphics*.jar</String>
-                                        <String>${oxygenHome}/lib/*fop.jar</String>
-                                        <String>${oxygenHome}/lib/fontbox-*.jar</String>
-                                        <String>${oxygenHome}/lib/*batik*.jar</String>
-                                        <String>${oxygenHome}/lib/js.jar</String>
-                                        <String>${oxygenHome}/lib/poi*.jar</String>
-                                        <String>${oxygenHome}/lib/nekohtml.jar</String>
-                                        <String>${oxygenHome}/lib/xml-apis-ext.jar</String>
-                                        <String>${oxygenHome}/lib/avalon-framework*.jar</String>
-                                        <String>${oxygenHome}/lib/*jeuclid-core.jar</String>
-                                        <String>${oxygenHome}/lib/*jeuclid-fop.jar</String>
-                                        <String>${oxygenHome}/lib/*jai_tiff*.jar</String>
-                                        <String>${oxygenHome}/lib/jh.jar</String>
-                                        <String>${oxygenHome}/lib/oxygen-basic-utilities.jar</String>
-                                        <String>${oxygenHome}/lib/oxygen-license.jar</String>
-                                        <String>${oxygenHome}/lib/*sandbox.jar</String>
-                                        <String>${oxygenHome}/lib/*json*.jar</String>
-                                        <String>${dita.dir.url}/lib/jsearch.jar</String>
-                                        <String>${oxygenHome}/lib/lucene*.jar</String>
-                                        <String>${dita.dir.url}</String>
-                                        <String>${dita.dir.url}/target/classes</String>
-                                        <String>${dita.dir.url}/lib/*dost-patches.jar</String>
-                                        <String>${dita.dir.url}/lib/</String>
-                                        <String>${dita.dir.url}/lib/*.jar</String>
                                         <String>${oxygenHome}/lib/poi-3.10-FINAL-20140208.jar</String>
                                         <String>${oxygenHome}/lib/json.jar</String>
                                     </String-array>
@@ -944,9 +833,6 @@
                                 </field>
                                 <field name="openInBrowser">
                                     <Boolean>false</Boolean>
-                                </field>
-                                <field name="outputFile">
-                                    <null/>
                                 </field>
                                 <field name="outputResource">
                                     <null/>
